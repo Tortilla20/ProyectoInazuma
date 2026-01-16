@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/dam2_alu02@inf.ald/NetBeansProjects/Inazuma/src/inazuma/Model/Personaje.java</file>
-            <file>file:/home/dam2_alu02@inf.ald/NetBeansProjects/Inazuma/src/inazuma/Model/Supertecnica.java</file>
-            <file>file:/home/dam2_alu02@inf.ald/NetBeansProjects/Inazuma/src/inazuma/Model/Usuario.java</file>
-            <file>file:/home/dam2_alu02@inf.ald/NetBeansProjects/Inazuma/src/inazuma/Model/Atributo.java</file>
-            <file>file:/home/dam2_alu02@inf.ald/NetBeansProjects/Inazuma/src/inazuma/Model/Equipo.java</file>
-            <file>file:/home/dam2_alu02@inf.ald/NetBeansProjects/Inazuma/src/inazuma/Inazuma.java</file>
-            <file>file:/home/dam2_alu02@inf.ald/NetBeansProjects/Inazuma/src/inazuma/controller/userController/UserController.java</file>
+            <file>file:/home/dam2_alu09@inf.ald/NetBeansProjects/ProjectoAD/src/projectoad/PersonajesTableDialogController.java</file>
+            <file>file:/home/dam2_alu09@inf.ald/NetBeansProjects/ProjectoAD/src/projectoad/SesionDialogController.java</file>
+            <file>file:/home/dam2_alu09@inf.ald/NetBeansProjects/ProjectoAD/src/projectoad/MainFrame.java</file>
+            <file>file:/home/dam2_alu09@inf.ald/NetBeansProjects/ProjectoAD/src/projectoad/SesionDialog.java</file>
+            <file>file:/home/dam2_alu09@inf.ald/NetBeansProjects/ProjectoAD/src/projectoad/ProjectoAD.java</file>
+            <file>file:/home/dam2_alu09@inf.ald/NetBeansProjects/ProjectoAD/src/projectoad/PersonajesTableDialog.java</file>
+            <file>file:/home/dam2_alu09@inf.ald/NetBeansProjects/ProjectoAD/src/projectoad/MainFrameController.java</file>
         </group>
     </open-files>
 </project-private>
