@@ -73,6 +73,7 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
                 "Icono", "Nombre", "Genero", "Posicion", "Atributo", "Pais"
             }
         ));
+        jugadoresTable.setRowHeight(80);
         tablaJugadoresScrollPane.setViewportView(jugadoresTable);
 
         informacionButton.setText("Mostrar..");
