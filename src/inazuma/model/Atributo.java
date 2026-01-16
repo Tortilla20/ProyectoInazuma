@@ -13,6 +13,7 @@ class Atributo {
     private String nombre;
     private Atributo ventaja;
     private Atributo desventaja;
+    private String imagen;
 
     public Atributo(int id, String nombre, Atributo ventaja, Atributo desventaja) {
         this.id = id;

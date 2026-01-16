@@ -22,7 +22,7 @@ public class Personaje {
     private List<Supertecnica> listaSupertecnicas;
     private List<Equipo> listaEquipos;
     private String genero;
-    private String atributo;
+    private int atributo;
     private String image;
 
     public Personaje(int id, String nombre) {
@@ -110,11 +110,11 @@ public class Personaje {
         this.genero = genero;
     }
 
-    public String getAtributo() {
+    public int getAtributo() {
         return atributo;
     }
 
-    public void setAtributo(String atributo) {
+    public void setAtributo(int atributo) {
         this.atributo = atributo;
     }
 

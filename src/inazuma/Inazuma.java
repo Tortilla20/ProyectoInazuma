@@ -4,6 +4,8 @@
  */
 package inazuma;
 
+import inazuma.model.Personaje;
+import java.sql.*;
 import javax.swing.ImageIcon;
 
 /**
@@ -19,6 +21,12 @@ public class Inazuma {
         // TODO code application logic here
         
         System.out.println("Bienvenido a la app de inazuma");
+        
+        Connection conexion = OperacionBD.abrirConexion();
+        OperacionBD.getPersonajes();
+        Personaje personaje = new Personaje(OperacionBD.getPersonajes().size(),"pepe");
+        OperacionBD.addPersonaje(personaje);
+        OperacionBD.getPersonajes();
         
 
                 
