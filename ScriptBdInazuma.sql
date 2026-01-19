@@ -67,17 +67,17 @@ CREATE TABLE USUARIO (
 
 ----------------------------------------
 
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Xene', 'Xene', 'El guerrero definitivo, nacido de la Operación Génesis. Sus disparos surcan el cielo como cometas', 'FW', 'IMAGE');
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Spencer Gates', 'Cosplay', 'Disfruta de novelas cursis y participa en concursos de escritura cada mes', 'DF', 'IMAGE');
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Marvin Murdock', 'Marvin', 'El mayor de tres hermanos y capitán de Kirkwood. Un perfeccionista que considera la victoria sagrada', 'FW', 'IMAGE');
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Byron Love', 'Aphrody', 'Cautiva a sus rivales con una gracia artística, jugando con el aura de una deidad desde lo alto', 'MF', 'IMAGE');
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Sean Lavender', 'Lavender', 'Ama la jardinería y cree firmemente en el poder calmante de la lavanda', 'FW', 'IMAGE');
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Eaton Rampage', 'Rampage', 'El chiste de la dieta de "ver comida" fue hecho para él. Come cualquier cosa que vea', 'FW', 'IMAGE');
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Ian Smith', 'Smith', 'No hay dónde correr ni dónde esconderse de su mirada afilada como la de un halcón', 'DF', 'IMAGE');
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Changsu Choi', 'Choi', 'Un creador de juego nato cuyo control preciso puede incluso rivalizar con Jude', 'MF', 'IMAGE');
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Mac Robi', 'Robingo', 'Capitán de la selección nacional de Brasil, The Kingdom. Apodado el Rey del Gol', 'FW', 'IMAGE');
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Nuel', 'Nuel', 'Sus poderes mágicos resultan muy útiles en el campo, y además todas las chicas lo adoran', 'MF', 'IMAGE');
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Cole Tivator', 'Tivator', 'Intenta recuperar terrenos baldíos y convertirlos en tierras de cultivo productivas', 'DF', 'IMAGE');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Xene', 'Xene', 'El guerrero definitivo, nacido de la Operación Génesis. Sus disparos surcan el cielo como cometas', 'FW', 'https://dxi4wb638ujep.cloudfront.net/1/k/j/q/jqm20m_shls.webp');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Spencer Gates', 'Cosplay', 'Disfruta de novelas cursis y participa en concursos de escritura cada mes', 'DF', 'https://dxi4wb638ujep.cloudfront.net/1/k/v/p/vpocwdtqids.webp');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Marvin Murdock', 'Marvin', 'El mayor de tres hermanos y capitán de Kirkwood. Un perfeccionista que considera la victoria sagrada', 'FW', 'https://dxi4wb638ujep.cloudfront.net/1/k/p/c/pcfzrjfd6jk.webp');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Byron Love', 'Aphrody', 'Cautiva a sus rivales con una gracia artística, jugando con el aura de una deidad desde lo alto', 'MF', 'https://dxi4wb638ujep.cloudfront.net/1/k/d/y/dykb3jbxeis.webp');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Sean Lavender', 'Lavender', 'Ama la jardinería y cree firmemente en el poder calmante de la lavanda', 'FW', 'https://dxi4wb638ujep.cloudfront.net/1/k/n/0/n0ogwdtbj1m.webp');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Eaton Rampage', 'Rampage', 'El chiste de la dieta de "ver comida" fue hecho para él. Come cualquier cosa que vea', 'FW', 'https://dxi4wb638ujep.cloudfront.net/1/k/1/m/1mbqxxoacwk.webp');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Ian Smith', 'Smith', 'No hay dónde correr ni dónde esconderse de su mirada afilada como la de un halcón', 'DF', 'https://dxi4wb638ujep.cloudfront.net/1/k/6/s/6ssmkasv0uu.webp');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Changsu Choi', 'Choi', 'Un creador de juego nato cuyo control preciso puede incluso rivalizar con Jude', 'MF', 'https://dxi4wb638ujep.cloudfront.net/1/k/l/h/lhrjdsednmc.webp');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Mac Robi', 'Robingo', 'Capitán de la selección nacional de Brasil, The Kingdom. Apodado el Rey del Gol', 'FW', 'https://dxi4wb638ujep.cloudfront.net/1/k/x/a/xay52ifu7qm.webp');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Nuel', 'Nuel', 'Sus poderes mágicos resultan muy útiles en el campo, y además todas las chicas lo adoran', 'MF', 'https://dxi4wb638ujep.cloudfront.net/1/k/q/x/qxayjjoaoge.webp');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Cole Tivator', 'Tivator', 'Intenta recuperar terrenos baldíos y convertirlos en tierras de cultivo productivas', 'DF', 'https://dxi4wb638ujep.cloudfront.net/1/k/f/v/fvcwrm8-ele.webp');
 
 INSERT INTO ATRIBUTO (NOMBRE, IMAGEN_TIPO_ATRIBUTO) VALUES ('Fuego');
 INSERT INTO ATRIBUTO (NOMBRE, IMAGEN_TIPO_ATRIBUTO) VALUES ('Viento');
@@ -115,4 +115,5 @@ INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUE
 INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUES ('Terremoto', 1, 'Alta', 'Defensa', 10);
 
 INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUES ('Marea Gigante', 1, 'Alta', 'Disparo', 11);
+
 
