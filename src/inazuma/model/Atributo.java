@@ -8,7 +8,7 @@ package inazuma.model;
  *
  * @author dam2_alu02@inf.ald
  */
-class Atributo {
+public class Atributo {
     private int id;
     private String nombre;
     private Atributo ventaja;

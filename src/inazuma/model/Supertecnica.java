@@ -8,7 +8,7 @@ package inazuma.model;
  *
  * @author dam2_alu02@inf.ald
  */
-class Supertecnica {
+public class Supertecnica {
     private int id;
     private String nombre;
     private int potencia;

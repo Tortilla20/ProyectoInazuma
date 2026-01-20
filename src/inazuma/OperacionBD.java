@@ -5,7 +5,9 @@
 package inazuma;
 
 
-import inazuma.model.Personaje;
+import com.mysql.cj.xdevapi.PreparableStatement;
+import inazuma.model.Atributo;
+import inazuma.model.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -99,6 +101,62 @@ public class OperacionBD {
         
         
     }
+    
+    public static void addSupertecnica(Supertecnica supertecnica){
+        
+        try {
+            String sentencia = "INSERT INTO supertecnica(nombre,coordinada,potencia,tipo,id_atributo) VALUES (?,?,?,?,?)";
+            PreparedStatement ps = conexion.prepareStatement(sentencia);
+            ps.setString(1, supertecnica.getNombre());
+            ps.setBoolean(2, supertecnica.isCoordinada());
+            ps.setInt(3, supertecnica.getPotencia());
+            ps.setString(4, supertecnica.getTipo());
+            ps.setInt(5, supertecnica.getAtributo().getId());
+        } catch (SQLException ex) {
+
+            System.out.println("Error al crear supertecnica en la base de datos");
+        }
+    
+    }
+    
+    public static void addEquipo(Equipo equipo){
+        try {
+            String sentencia = "INSERT INTO equipo (nombre,region,escudo,id_capitan,id_entrenador) VALUES (?,?,?,?,?)";
+            
+            PreparedStatement ps = conexion.prepareStatement(sentencia);
+            ps.setString(1, equipo.getNombre());
+            ps.setString(2, equipo.getRegion());
+            ps.setString(3, equipo.getEscudo());
+            ps.setInt(4, equipo.getCapitan().getId());
+            ps.setInt(5, equipo.getEntrenador().getId());
+        } catch (SQLException ex) {
+            System.out.println("Error al añadir el equipo a la base de datos");
+        }
+        
+    }
+    public static void modifyEquipo(Equipo equipo){
+        try {
+            String sentencia = "UPDATE equipo SET nombre = ? "
+                    + "region = ? "
+                    + "escudo = ? "
+                    + "id_capitan = ? "
+                    + "id_entrenador = ? "
+                    + "WHERE id = ?";
+            
+            PreparedStatement ps = conexion.prepareStatement(sentencia);
+            ps.setString(1, equipo.getNombre());
+            ps.setString(2, equipo.getRegion());
+            ps.setString(3, equipo.getEscudo());
+            ps.setInt(4, equipo.getCapitan().getId());
+            ps.setInt(5, equipo.getEntrenador().getId());
+            ps.setInt(6, equipo.getId());
+        } catch (SQLException ex) {
+            System.out.println("Error al actualizar el equipo a la base de datos");
+        }
+        
+    }
+    
+    
     public static void modifyAtributo(String nombre, String atrib){
         String sentencia = "UPDATE personaje "
                 + "SET atributo = ? "

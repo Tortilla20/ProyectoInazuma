@@ -1,0 +1,2 @@
+SET FOREIGN_KEY_CHECKS=0; desactiva a comprobación das foreign keys.
+SET FOREIGN_KEY_CHECKS=1; activa a comprobación das foreign keys.

@@ -25,6 +25,8 @@ public class Inazuma {
         Connection conexion = OperacionBD.abrirConexion();
         OperacionBD.getPersonajes();
         Personaje personaje = new Personaje(OperacionBD.getPersonajes().size(),"pepe");
+        personaje.setAtributo(1);
+   
         OperacionBD.addPersonaje(personaje);
         OperacionBD.getPersonajes();
         

@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author dam2_alu02@inf.ald
  */
-class Equipo {
+public class Equipo {
     private int id;
     private String nombre;
     private String region;
