@@ -22,14 +22,15 @@ public class Personaje {
     private List<Supertecnica> listaSupertecnicas;
     private List<Equipo> listaEquipos;
     private String genero;
-    private int atributo;
+    private Atributo atributo;
     private String image;
 
-    public Personaje(int id, String nombre) {
+    public Personaje(int id, String nombre,Atributo atributo) {
         this.id = id;
         this.nombre = nombre;
         this.listaEquipos = new ArrayList<>();
         this.listaSupertecnicas = new ArrayList<>();
+        this.atributo = atributo;
     }
 
     public int getId() {
@@ -110,11 +111,11 @@ public class Personaje {
         this.genero = genero;
     }
 
-    public int getAtributo() {
+    public Atributo getAtributo() {
         return atributo;
     }
 
-    public void setAtributo(int atributo) {
+    public void setAtributo(Atributo atributo) {
         this.atributo = atributo;
     }
 

@@ -20,6 +20,7 @@ import java.util.logging.Logger;
  */
 public class OperacionBD {
     private static Connection conexion;
+    private static List<Atributo> listaAtributos;
     
     public static Connection abrirConexion(){
         try {
@@ -27,6 +28,7 @@ public class OperacionBD {
             //Cambiar url por nosa base de datos
             String url = "jdbc:mysql://localhost:3306/inazumaeleven";
             conexion = DriverManager.getConnection(url, "root", "abc123.");
+            getAllAtributos();
             
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(OperacionBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -36,7 +38,6 @@ public class OperacionBD {
         return conexion;
         
     }
-    
     public static void cerrarConexion(){
         try {
             conexion.close();
@@ -44,7 +45,6 @@ public class OperacionBD {
             Logger.getLogger(OperacionBD.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
     public static List<Personaje> getPersonajes(){
         List<Personaje> listaPersonajes = new ArrayList<>();
         
@@ -62,14 +62,20 @@ public class OperacionBD {
                 System.out.println(rs.getString(6));
                 System.out.println(rs.getString(7));
                 System.out.println(rs.getInt(8));*/
-                
-                Personaje p = new Personaje(rs.getInt(1),rs.getString(2));
+                Atributo atributo = null;
+                Personaje p = new Personaje(rs.getInt(1),rs.getString(2),atributo);
                 p.setAlias(rs.getString(3));
                 p.setDescription(rs.getString(4));
                 p.setPosicion(rs.getString(5));
                 p.setGenero(rs.getString(6));
                 p.setImage(rs.getString(7));
-                p.setAtributo(rs.getInt(8));
+                int id_atributo = rs.getInt(8);
+                for(Atributo a : listaAtributos){
+                    if(a.getId() == id_atributo){
+                        atributo = a;
+                    }
+                }
+                p.setAtributo(atributo);
                 listaPersonajes.add(p);
             }
             
@@ -80,7 +86,6 @@ public class OperacionBD {
         }
         return listaPersonajes;
     }
-    
     public static void addPersonaje(Personaje personaje){
         String sentencia = "INSERT INTO personaje (nombre,alias,descripcion,posicion,id_atributo,genero) VALUES (?,?,?,?,?,?)";
         
@@ -91,7 +96,7 @@ public class OperacionBD {
             ps.setString(2, personaje.getAlias());
             ps.setString(3, personaje.getDescription());
             ps.setString(4, personaje.getPosicion());
-            ps.setInt(5, personaje.getAtributo());
+            ps.setInt(5, personaje.getAtributo().getId());
             ps.setString(6, personaje.getGenero());
             ps.execute();
             
@@ -101,7 +106,6 @@ public class OperacionBD {
         
         
     }
-    
     public static void addSupertecnica(Supertecnica supertecnica){
         
         try {
@@ -118,7 +122,6 @@ public class OperacionBD {
         }
     
     }
-    
     public static void addEquipo(Equipo equipo){
         try {
             String sentencia = "INSERT INTO equipo (nombre,region,escudo,id_capitan,id_entrenador) VALUES (?,?,?,?,?)";
@@ -155,8 +158,6 @@ public class OperacionBD {
         }
         
     }
-    
-    
     public static void modifyAtributo(String nombre, String atrib){
         String sentencia = "UPDATE personaje "
                 + "SET atributo = ? "
@@ -175,7 +176,6 @@ public class OperacionBD {
         }
         
     }
-    
     public static void modifyPersonaje(Personaje personaje){
     
         String sentencia = "UPDATE personaje "
@@ -186,7 +186,7 @@ public class OperacionBD {
             PreparedStatement ps = conexion.prepareStatement(sentencia);
             ps.setString(1, personaje.getDescription());
             ps.setString(2, personaje.getPosicion());
-            ps.setInt(3, personaje.getAtributo());
+            ps.setInt(3, personaje.getAtributo().getId());
             ps.setString(4, personaje.getGenero());
             ps.setString(5, personaje.getImage());
             ps.setInt(6, personaje.getId());
@@ -196,7 +196,51 @@ public class OperacionBD {
             Logger.getLogger(OperacionBD.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    private static void getAllAtributos(){
     
-    public static void addSupertecnica(){}
+        listaAtributos = new ArrayList<>();
+        try {
+            String sentencia = "SELECT * FROM atributo";
+            Statement st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sentencia);
+            
+            while(rs.next()){
+                Atributo atributo = new Atributo(rs.getInt(1), rs.getString(2),rs.getString(3));
+                listaAtributos.add(atributo);
+            }
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+    }
+    public static List<Atributo> getListaAtributos(){
+        return listaAtributos;
+    }
+    public static List<Supertecnica> getListaSupertecnicas(){
+        List<Supertecnica> listaSupertecnica = new ArrayList<>();
+        try {
+            
+            String sentencia = "SELECT * FROM supertecnia";
+            Statement st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sentencia);
+            
+            while(rs.next()){
+                Atributo atributo = null;
+                int id_atributo = rs.getInt(5);
+                for(Atributo a : listaAtributos){
+                    if(a.getId() == id_atributo){
+                        atributo = a;
+                    }
+                }
+                listaSupertecnica.add(new Supertecnica(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getBoolean(4), atributo, rs.getString(6)));
+            }
+            
+            return listaSupertecnica;
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        return listaSupertecnica;
+    
+    }
+    
     
 }

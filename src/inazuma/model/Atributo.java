@@ -11,15 +11,13 @@ package inazuma.model;
 public class Atributo {
     private int id;
     private String nombre;
-    private Atributo ventaja;
-    private Atributo desventaja;
     private String imagen;
 
-    public Atributo(int id, String nombre, Atributo ventaja, Atributo desventaja) {
+    public Atributo(int id, String nombre,String imagen) {
         this.id = id;
         this.nombre = nombre;
-        this.ventaja = ventaja;
-        this.desventaja = desventaja;
+        this.imagen = imagen;
+
     }
 
     public int getId() {
@@ -38,21 +36,5 @@ public class Atributo {
         this.nombre = nombre;
     }
 
-    public Atributo getVentaja() {
-        return ventaja;
-    }
-
-    public void setVentaja(Atributo ventaja) {
-        this.ventaja = ventaja;
-    }
-
-    public Atributo getDesventaja() {
-        return desventaja;
-    }
-
-    public void setDesventaja(Atributo desventaja) {
-        this.desventaja = desventaja;
-    }
-    
     
 }
