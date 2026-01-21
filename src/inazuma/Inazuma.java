@@ -4,31 +4,22 @@
  */
 package inazuma;
 
-import inazuma.model.Personaje;
+import inazuma.controladores.MainFrameController;
+import inazuma.vistas.MainFrame;
 import java.sql.*;
-import javax.swing.ImageIcon;
 
 /**
  *
- * @author dam2_alu02@inf.ald
+ * @author aol
  */
 public class Inazuma {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-        System.out.println("Bienvenido a la app de inazuma");
         
         Connection conexion = OperacionBD.abrirConexion();
-        
-        
-        
-
-                
-                
+        MainFrame mainView = new MainFrame();
+        MainFrameController fc = new MainFrameController(mainView);
+        mainView.setVisible(true);
         
     }
     

@@ -3,6 +3,12 @@ DROP DATABASE IF EXISTS InazumaEleven;
 CREATE DATABASE InazumaEleven;
 USE InazumaEleven;
 
+CREATE TABLE USUARIO (
+	ID INT AUTO_INCREMENT PRIMARY KEY,
+	NOMBRE VARCHAR(30) NOT NULL,
+	CONTRASENHA VARCHAR(60)
+);
+
 CREATE TABLE ATRIBUTO (
 	ID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	NOMBRE VARCHAR(35) NOT NULL,
@@ -18,7 +24,9 @@ CREATE TABLE PERSONAJE(
 	GENERO VARCHAR(20),
 	IMAGEN VARCHAR(200),
 	ID_ATRIBUTO INT,
-	FOREIGN KEY (ID_ATRIBUTO) REFERENCES ATRIBUTO(ID)
+	ID_USUARIO INT,
+	FOREIGN KEY (ID_ATRIBUTO) REFERENCES ATRIBUTO(ID),
+	FOREIGN KEY (ID_USUARIO) REFERENCES USUARIO(ID)
 );
 
 CREATE TABLE EQUIPO (
@@ -59,30 +67,26 @@ CREATE TABLE TIENE (
 );
 
 
-CREATE TABLE USUARIO (
-	ID INT AUTO_INCREMENT PRIMARY KEY,
-	NOMBRE VARCHAR(30) NOT NULL,
-	CONTRASENHA VARCHAR(60)
-);
 
 
 
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN, ID_ATRIBUTO) VALUES ('Xene', 'Xene', 'El guerrero definitivo, nacido de la Operación Génesis. Sus disparos surcan el cielo como cometas', 'FW', 'https://dxi4wb638ujep.cloudfront.net/1/k/j/q/jqm20m_shls.webp', 1);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN, ID_ATRIBUTO) VALUES ('Spencer Gates', 'Cosplay', 'Disfruta de novelas cursis y participa en concursos de escritura cada mes', 'DF', 'https://dxi4wb638ujep.cloudfront.net/1/k/v/p/vpocwdtqids.webp', 2);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN, ID_ATRIBUTO) VALUES ('Marvin Murdock', 'Marvin', 'El mayor de tres hermanos y capitán de Kirkwood. Un perfeccionista que considera la victoria sagrada', 'FW', 'https://dxi4wb638ujep.cloudfront.net/1/k/p/c/pcfzrjfd6jk.webp', 3);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN, ID_ATRIBUTO) VALUES ('Byron Love', 'Aphrody', 'Cautiva a sus rivales con una gracia artística, jugando con el aura de una deidad desde lo alto', 'MF', 'https://dxi4wb638ujep.cloudfront.net/1/k/d/y/dykb3jbxeis.webp', 4);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN, ID_ATRIBUTO) VALUES ('Sean Lavender', 'Lavender', 'Ama la jardinería y cree firmemente en el poder calmante de la lavanda', 'FW', 'https://dxi4wb638ujep.cloudfront.net/1/k/n/0/n0ogwdtbj1m.webp', 4);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN, ID_ATRIBUTO) VALUES ('Eaton Rampage', 'Rampage', 'El chiste de la dieta de "ver comida" fue hecho para él. Come cualquier cosa que vea', 'FW', 'https://dxi4wb638ujep.cloudfront.net/1/k/1/m/1mbqxxoacwk.webp', 3);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN, ID_ATRIBUTO) VALUES ('Ian Smith', 'Smith', 'No hay dónde correr ni dónde esconderse de su mirada afilada como la de un halcón', 'DF', 'https://dxi4wb638ujep.cloudfront.net/1/k/6/s/6ssmkasv0uu.webp', 2);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN, ID_ATRIBUTO) VALUES ('Changsu Choi', 'Choi', 'Un creador de juego nato cuyo control preciso puede incluso rivalizar con Jude', 'MF', 'https://dxi4wb638ujep.cloudfront.net/1/k/l/h/lhrjdsednmc.webp', 1);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN, ID_ATRIBUTO) VALUES ('Mac Robi', 'Robingo', 'Capitán de la selección nacional de Brasil, The Kingdom. Apodado el Rey del Gol', 'FW', 'https://dxi4wb638ujep.cloudfront.net/1/k/x/a/xay52ifu7qm.webp', 1);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN, ID_ATRIBUTO) VALUES ('Nuel', 'Nuel', 'Sus poderes mágicos resultan muy útiles en el campo, y además todas las chicas lo adoran', 'MF', 'https://dxi4wb638ujep.cloudfront.net/1/k/q/x/qxayjjoaoge.webp', 2);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN, ID_ATRIBUTO) VALUES ('Cole Tivator', 'Tivator', 'Intenta recuperar terrenos baldíos y convertirlos en tierras de cultivo productivas', 'DF', 'https://dxi4wb638ujep.cloudfront.net/1/k/f/v/fvcwrm8-ele.webp', 3);
 
-INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Fuego', 'https://static.wikia.nocookie.net/inazuma-eleven/images/6/61/Fire_icon_%28VR%29.png');
-INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Viento', 'https://static.wikia.nocookie.net/inazuma-eleven/images/6/68/Wind_icon_%28VR%29.png');
-INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Montaña', 'https://static.wikia.nocookie.net/inazuma-eleven/images/6/6a/Mountain_icon_%28VR%29.png');
-INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Bosque', 'https://static.wikia.nocookie.net/inazuma-eleven/images/0/0b/Forest_icon_%28VR%29.png');
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Xene', 'Xene', 'El guerrero definitivo, nacido de la Operación Génesis. Sus disparos surcan el cielo como cometas', 'FW','Hombre', 'https://dxi4wb638ujep.cloudfront.net/1/k/j/q/jqm20m_shls.webp', 1,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Spencer Gates', 'Cosplay', 'Disfruta de novelas cursis y participa en concursos de escritura cada mes', 'DF','Neutro' ,'https://dxi4wb638ujep.cloudfront.net/1/k/v/p/vpocwdtqids.webp', 2,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Marvin Murdock', 'Marvin', 'El mayor de tres hermanos y capitán de Kirkwood. Un perfeccionista que considera la victoria sagrada', 'FW', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/p/c/pcfzrjfd6jk.webp', 3,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Byron Love', 'Aphrody', 'Cautiva a sus rivales con una gracia artística, jugando con el aura de una deidad desde lo alto', 'MF', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/d/y/dykb3jbxeis.webp', 4,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Sean Lavender', 'Lavender', 'Ama la jardinería y cree firmemente en el poder calmante de la lavanda', 'FW', 'Neutro','https://dxi4wb638ujep.cloudfront.net/1/k/n/0/n0ogwdtbj1m.webp', 4,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Eaton Rampage', 'Rampage', 'El chiste de la dieta de "ver comida" fue hecho para él. Come cualquier cosa que vea', 'FW', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/1/m/1mbqxxoacwk.webp', 3,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Ian Smith', 'Smith', 'No hay dónde correr ni dónde esconderse de su mirada afilada como la de un halcón', 'DF', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/6/s/6ssmkasv0uu.webp', 2,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Changsu Choi', 'Choi', 'Un creador de juego nato cuyo control preciso puede incluso rivalizar con Jude', 'MF', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/l/h/lhrjdsednmc.webp', 1,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Mac Robi', 'Robingo', 'Capitán de la selección nacional de Brasil, The Kingdom. Apodado el Rey del Gol', 'FW', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/x/a/xay52ifu7qm.webp', 1,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Nuel', 'Nuel', 'Sus poderes mágicos resultan muy útiles en el campo, y además todas las chicas lo adoran', 'MF', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/q/x/qxayjjoaoge.webp', 2,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Cole Tivator', 'Tivator', 'Intenta recuperar terrenos baldíos y convertirlos en tierras de cultivo productivas', 'DF', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/f/v/fvcwrm8-ele.webp', 3,2);
+
+INSERT INTO ATRIBUTO (NOMBRE, IMAGEN_TIPO_ATRIBUTO) VALUES ('Fuego', 'https://static.wikia.nocookie.net/inazuma-eleven/images/6/61/Fire_icon_%28VR%29.png');
+INSERT INTO ATRIBUTO (NOMBRE, IMAGEN_TIPO_ATRIBUTO) VALUES ('Viento', 'https://static.wikia.nocookie.net/inazuma-eleven/images/6/68/Wind_icon_%28VR%29.png');
+INSERT INTO ATRIBUTO (NOMBRE, IMAGEN_TIPO_ATRIBUTO) VALUES ('Montaña', 'https://static.wikia.nocookie.net/inazuma-eleven/images/6/6a/Mountain_icon_%28VR%29.png');
+INSERT INTO ATRIBUTO (NOMBRE, IMAGEN_TIPO_ATRIBUTO) VALUES ('Bosque', 'https://static.wikia.nocookie.net/inazuma-eleven/images/0/0b/Forest_icon_%28VR%29.png');
 
 
 INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Raimon', 'Japón', 'IMAGE');
@@ -109,6 +113,8 @@ INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUE
 INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUES ('Terremoto', 1, 'Alta', 'Defensa', 3);
 INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUES ('Marea Gigante', 1, 'Alta', 'Disparo', 1);
 
+INSERT INTO USUARIO (NOMBRE,CONTRASENHA) VALUES ('admin','abc123.');
+INSERT INTO USUARIO (NOMBRE,CONTRASENHA) VALUES ('invitado','abc123.');
 
 SET FOREIGN_KEY_CHECKS=1;
 

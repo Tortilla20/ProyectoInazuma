@@ -1,13 +1,15 @@
+package inazuma;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package inazuma;
 
-
-import com.mysql.cj.xdevapi.PreparableStatement;
-import inazuma.model.Atributo;
-import inazuma.model.*;
+import inazuma.modelo.Atributo;
+import inazuma.modelo.Equipo;
+import inazuma.modelo.Personaje;
+import inazuma.modelo.Supertecnica;
+import inazuma.modelo.Usuario;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +23,10 @@ import java.util.logging.Logger;
 public class OperacionBD {
     private static Connection conexion;
     private static List<Atributo> listaAtributos;
+    private static Usuario usuarioActual = new Usuario(3, "pepe", "pepe");
+    private static Usuario invitado;
+    private static Usuario admin;
+    
     
     public static Connection abrirConexion(){
         try {
@@ -29,6 +35,7 @@ public class OperacionBD {
             String url = "jdbc:mysql://localhost:3306/inazumaeleven";
             conexion = DriverManager.getConnection(url, "root", "abc123.");
             getAllAtributos();
+            getUsuarios();
             
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(OperacionBD.class.getName()).log(Level.SEVERE, null, ex);
@@ -49,7 +56,14 @@ public class OperacionBD {
         List<Personaje> listaPersonajes = new ArrayList<>();
         
         try {
-            String consultaSQL = "SELECT * FROM personaje";
+            String consultaSQL;
+            if(usuarioActual.equals(admin)){
+                consultaSQL = "SELECT * FROM personaje";
+            }
+            else{
+                consultaSQL = "SELECT * FROM personaje WHERE ID_USUARIO = " + usuarioActual.getId() + " OR ID_USUARIO = " + invitado.getId()+";";
+
+            }
             Statement st = conexion.createStatement();
             ResultSet rs = st.executeQuery(consultaSQL);
             
@@ -63,18 +77,20 @@ public class OperacionBD {
                 System.out.println(rs.getString(7));
                 System.out.println(rs.getInt(8));*/
                 Atributo atributo = null;
-                Personaje p = new Personaje(rs.getInt(1),rs.getString(2),atributo);
+                Personaje p = new Personaje(rs.getInt(1),rs.getString(2),atributo,usuarioActual);
                 p.setAlias(rs.getString(3));
                 p.setDescription(rs.getString(4));
                 p.setPosicion(rs.getString(5));
                 p.setGenero(rs.getString(6));
                 p.setImage(rs.getString(7));
                 int id_atributo = rs.getInt(8);
+
                 for(Atributo a : listaAtributos){
                     if(a.getId() == id_atributo){
                         atributo = a;
                     }
                 }
+
                 p.setAtributo(atributo);
                 listaPersonajes.add(p);
             }
@@ -219,7 +235,7 @@ public class OperacionBD {
         List<Supertecnica> listaSupertecnica = new ArrayList<>();
         try {
             
-            String sentencia = "SELECT * FROM supertecnia";
+            String sentencia = "SELECT * FROM supertecnica";
             Statement st = conexion.createStatement();
             ResultSet rs = st.executeQuery(sentencia);
             
@@ -241,6 +257,64 @@ public class OperacionBD {
         return listaSupertecnica;
     
     }
+    public static void actualizarUsuarioActual(Usuario usuario){
+        usuarioActual = usuario;
+    }
+    private static void getUsuarios(){
+        List<Usuario> listaUsuarios = new ArrayList<>();
+        try {
+            String sentencia = "SELECT * FROM usuario";
+            Statement st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sentencia);
+            while(rs.next()){
+                listaUsuarios.add(new Usuario(rs.getInt(1),rs.getString(2),rs.getString(3)));
+            }
+            getInvitadoYAdmin(listaUsuarios);
+            
+        } catch (SQLException ex) {
+            System.out.println("Error en getUsuarioInvitado()");
+        }
+    }
+
+    private static void getInvitadoYAdmin(List<Usuario> listaUsuarios) {
+        for(Usuario u : listaUsuarios){
+            if(u.getUsuario().toLowerCase().equals("invitado")){
+                invitado = u;
+            }
+
+        }
+    }
     
+    public static void delPersonaje(Personaje personaje){
+        try {
+            String sentencia = "DELETE * FROM personaje WHERE id = " + personaje.getId()+ " ;";
+            Statement st = conexion.createStatement();
+            st.execute(sentencia);
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        
+    }
+    
+    public static void delEquipo(Equipo equipo){
+        try {
+            String sentencia = "DELETE * FROM equipo WHERE id = " + equipo.getId() + " ;";
+            Statement st = conexion.createStatement();
+            st.execute(sentencia);
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+    }
+    
+    public static void delSupertecnica(Supertecnica supertecnica){
+        try {
+            String sentencia = "DELETE * FROM supertecnica WHERE id = " + supertecnica.getId() + " ;";
+            Statement st = conexion.createStatement();
+            st.execute(sentencia);
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        
+    }
     
 }
