@@ -79,10 +79,10 @@ INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Ma
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Nuel', 'Nuel', 'Sus poderes mágicos resultan muy útiles en el campo, y además todas las chicas lo adoran', 'MF', 'https://dxi4wb638ujep.cloudfront.net/1/k/q/x/qxayjjoaoge.webp');
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, IMAGEN) VALUES ('Cole Tivator', 'Tivator', 'Intenta recuperar terrenos baldíos y convertirlos en tierras de cultivo productivas', 'DF', 'https://dxi4wb638ujep.cloudfront.net/1/k/f/v/fvcwrm8-ele.webp');
 
-INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Fuego');
-INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Viento');
-INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Montaña');
-INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Bosque');
+INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Fuego', 'https://static.wikia.nocookie.net/inazuma-eleven/images/6/61/Fire_icon_%28VR%29.png');
+INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Viento', 'https://static.wikia.nocookie.net/inazuma-eleven/images/6/68/Wind_icon_%28VR%29.png');
+INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Montaña', 'https://static.wikia.nocookie.net/inazuma-eleven/images/6/6a/Mountain_icon_%28VR%29.png');
+INSERT INTO ATRIBUTO (NOMBRE) VALUES ('Bosque', 'https://static.wikia.nocookie.net/inazuma-eleven/images/0/0b/Forest_icon_%28VR%29.png');
 
 
 INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Raimon', 'Japón', 'IMAGE');
@@ -109,5 +109,6 @@ INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUE
 INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUES ('Terremoto', 1, 'Alta', 'Defensa', 10);
 
 INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUES ('Marea Gigante', 1, 'Alta', 'Disparo', 11);
+
 
 SET FOREIGN_KEY_CHECKS=1;
