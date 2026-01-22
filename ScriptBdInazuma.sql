@@ -72,10 +72,10 @@ CREATE TABLE TIENE (
 
 
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Xene', 'Xene', 'El guerrero definitivo, nacido de la Operación Génesis. Sus disparos surcan el cielo como cometas', 'FW','Hombre', 'https://dxi4wb638ujep.cloudfront.net/1/k/j/q/jqm20m_shls.webp', 1,2);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Spencer Gates', 'Cosplay', 'Disfruta de novelas cursis y participa en concursos de escritura cada mes', 'DF','Neutro' ,'https://dxi4wb638ujep.cloudfront.net/1/k/v/p/vpocwdtqids.webp', 2,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Spencer Gates', 'Cosplay', 'Disfruta de novelas cursis y participa en concursos de escritura cada mes', 'DF','Neutral' ,'https://dxi4wb638ujep.cloudfront.net/1/k/v/p/vpocwdtqids.webp', 2,2);
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Marvin Murdock', 'Marvin', 'El mayor de tres hermanos y capitán de Kirkwood. Un perfeccionista que considera la victoria sagrada', 'FW', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/p/c/pcfzrjfd6jk.webp', 3,2);
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Byron Love', 'Aphrody', 'Cautiva a sus rivales con una gracia artística, jugando con el aura de una deidad desde lo alto', 'MF', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/d/y/dykb3jbxeis.webp', 4,2);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Sean Lavender', 'Lavender', 'Ama la jardinería y cree firmemente en el poder calmante de la lavanda', 'FW', 'Neutro','https://dxi4wb638ujep.cloudfront.net/1/k/n/0/n0ogwdtbj1m.webp', 4,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Sean Lavender', 'Lavender', 'Ama la jardinería y cree firmemente en el poder calmante de la lavanda', 'FW', 'Neutral','https://dxi4wb638ujep.cloudfront.net/1/k/n/0/n0ogwdtbj1m.webp', 4,2);
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Eaton Rampage', 'Rampage', 'El chiste de la dieta de "ver comida" fue hecho para él. Come cualquier cosa que vea', 'FW', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/1/m/1mbqxxoacwk.webp', 3,2);
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Ian Smith', 'Smith', 'No hay dónde correr ni dónde esconderse de su mirada afilada como la de un halcón', 'DF', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/6/s/6ssmkasv0uu.webp', 2,2);
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Changsu Choi', 'Choi', 'Un creador de juego nato cuyo control preciso puede incluso rivalizar con Jude', 'MF', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/l/h/lhrjdsednmc.webp', 1,2);
@@ -117,4 +117,5 @@ INSERT INTO USUARIO (NOMBRE,CONTRASENHA) VALUES ('admin','abc123.');
 INSERT INTO USUARIO (NOMBRE,CONTRASENHA) VALUES ('invitado','abc123.');
 
 SET FOREIGN_KEY_CHECKS=1;
+
 
