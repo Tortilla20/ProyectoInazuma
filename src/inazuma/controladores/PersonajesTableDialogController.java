@@ -36,7 +36,7 @@ public class PersonajesTableDialogController {
         
         System.out.println(OperacionBD.getListaAtributos());
         view.clearJugadoresTable();
-        List<Personaje> lista = OperacionBD.getPersonajes();
+        List<Personaje> lista = OperacionBD.getPersonajes("","","","");
         try {
             for( Personaje p : lista ){
                 Vector row = new Vector();

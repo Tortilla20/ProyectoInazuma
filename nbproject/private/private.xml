@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/aol/NetBeansProjects/ACCESO%20A%20DATOS/CodexInazuma/src/codexinazuma/CodexInazuma.java</file>
-            <file>file:/home/aol/NetBeansProjects/ACCESO%20A%20DATOS/CodexInazuma/src/codexinazuma/vistas/MainFrame.java</file>
-            <file>file:/home/aol/NetBeansProjects/ACCESO%20A%20DATOS/CodexInazuma/src/codexinazuma/controladores/MainFrameController.java</file>
-            <file>file:/home/aol/NetBeansProjects/ACCESO%20A%20DATOS/CodexInazuma/src/codexinazuma/controladores/PersonajesTableDialogController.java</file>
-            <file>file:/home/aol/NetBeansProjects/ACCESO%20A%20DATOS/CodexInazuma/src/codexinazuma/vistas/PersonajeDialog.java</file>
-            <file>file:/home/aol/NetBeansProjects/ACCESO%20A%20DATOS/CodexInazuma/src/codexinazuma/vistas/PersonajesTableDialog.java</file>
+            <file>file:/C:/Users/alumno/Documents/NetBeansProjects/ProyectoInazuma-Union/CodexInazuma/src/inazuma/modelo/Atributo.java</file>
+            <file>file:/C:/Users/alumno/Documents/NetBeansProjects/ProyectoInazuma-Union/CodexInazuma/src/inazuma/controladores/MainFrameController.java</file>
+            <file>file:/C:/Users/alumno/Documents/NetBeansProjects/ProyectoInazuma-Union/CodexInazuma/src/inazuma/OperacionBD.java</file>
+            <file>file:/C:/Users/alumno/Documents/NetBeansProjects/ProyectoInazuma-Union/CodexInazuma/src/inazuma/modelo/Usuario.java</file>
+            <file>file:/C:/Users/alumno/Documents/NetBeansProjects/ProyectoInazuma-Union/CodexInazuma/src/inazuma/vistas/PersonajesTableDialog.java</file>
+            <file>file:/C:/Users/alumno/Documents/NetBeansProjects/ProyectoInazuma-Union/CodexInazuma/src/inazuma/modelo/Personaje.java</file>
+            <file>file:/C:/Users/alumno/Documents/NetBeansProjects/ProyectoInazuma-Union/CodexInazuma/src/inazuma/controladores/PersonajesTableDialogController.java</file>
+            <file>file:/C:/Users/alumno/Documents/NetBeansProjects/ProyectoInazuma-Union/CodexInazuma/src/inazuma/controladores/PersonajeDialogController.java</file>
+            <file>file:/C:/Users/alumno/Documents/NetBeansProjects/ProyectoInazuma-Union/CodexInazuma/src/inazuma/Inazuma.java</file>
         </group>
     </open-files>
 </project-private>
