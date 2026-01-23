@@ -29,10 +29,4 @@ public class MusicController {
             System.out.println("Error de audio");
         }
     }
-
-    public void stop() {
-        if (clip != null) {
-            clip.stop();
-        }
-    }
 }

@@ -4,10 +4,10 @@
  */
 package creacionusuarios.controller;
 
-import creacionusuarios.model.OperacionesBD;
+import creacionusuarios.OperacionesBD;
 import creacionusuarios.model.User;
 import creacionusuarios.model.CurrentUser;
-import creacionusuarios.view.LoginFrame;
+import creacionusuarios.view.LoginDialog;
 import creacionusuarios.view.PantallaInicioFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,9 +20,9 @@ import java.sql.*;
  */
 public class LoginController {
     
-    private final LoginFrame view;
+    private final LoginDialog view;
 
-    public LoginController(LoginFrame view) {
+    public LoginController(LoginDialog view) {
         this.view = view;
         this.view.addRegisterButtonActionListener(loginListener());
     }

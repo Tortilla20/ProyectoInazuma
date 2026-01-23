@@ -4,11 +4,11 @@
  */
 package creacionusuarios.controller;
 
-import creacionusuarios.model.OperacionesBD;
+import creacionusuarios.OperacionesBD;
 import creacionusuarios.model.CurrentUser;
 import creacionusuarios.model.User;
 import creacionusuarios.view.PantallaInicioFrame;
-import creacionusuarios.view.RegisterFrame;
+import creacionusuarios.view.RegisterDialog;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,9 +20,9 @@ import java.sql.*;
  */
 public class RegisterController {
     
-    private final RegisterFrame view;
+    private final RegisterDialog view;
 
-    public RegisterController(RegisterFrame view) {
+    public RegisterController(RegisterDialog view) {
         this.view = view;
         this.view.addRegisterButtonActionListener(registerListener());
     }
@@ -53,8 +53,8 @@ public class RegisterController {
 
                             User user = new User(username, passwd);
                             CurrentUser.setCurrentUser(user);
-                            
                             JOptionPane.showMessageDialog(view, "Registro exitoso");
+                            
                             PantallaInicioFrame pif = new PantallaInicioFrame();
                             pif.updateForLogin();
                             pif.setVisible(true);

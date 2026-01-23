@@ -16,7 +16,7 @@ public class PantallaInicioFrame extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PantallaInicioFrame.class.getName());
 
-    private MusicController music = new MusicController();
+    private static boolean musicaIniciada = false;
     /**
      * Creates new form PantallaInicioFrame
      */
@@ -26,9 +26,12 @@ public class PantallaInicioFrame extends javax.swing.JFrame {
         loginButton.setBackground(new Color(255,112,40));
         registerButton.setBackground(new Color(255,112,40));
         guestButton.setBackground(new Color(255,112,40));
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        music.play("src/resources/OpeningIE.wav");
         menuBar.setVisible(false);
+        if(!musicaIniciada) {
+            MusicController musica = new MusicController();
+            musica.play("src/resources/OpeningIE.wav");
+            musicaIniciada = true;
+        }
     }
     
     /**

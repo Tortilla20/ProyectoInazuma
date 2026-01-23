@@ -4,9 +4,9 @@
  */
 package creacionusuarios.controller;
 
-import creacionusuarios.view.LoginFrame;
+import creacionusuarios.view.LoginDialog;
 import creacionusuarios.view.PantallaInicioFrame;
-import creacionusuarios.view.RegisterFrame;
+import creacionusuarios.view.RegisterDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -27,9 +27,9 @@ public class InicioFrameController {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RegisterFrame rf = new RegisterFrame();
-                RegisterController rc = new RegisterController(rf);
-                rf.setVisible(true);
+                RegisterDialog rd = new RegisterDialog(view, true);
+                RegisterController rc = new RegisterController(rd);
+                rd.setVisible(true);
                 view.dispose();
             }
         };
@@ -40,9 +40,9 @@ public class InicioFrameController {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                LoginFrame lf  = new LoginFrame();
-                LoginController lc = new LoginController(lf);
-                lf.setVisible(true);
+                LoginDialog ld  = new LoginDialog(view, true);
+                LoginController lc = new LoginController(ld);
+                ld.setVisible(true);
                 view.dispose();
             }
         };
