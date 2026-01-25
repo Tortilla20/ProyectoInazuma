@@ -35,6 +35,20 @@ anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/in
 
 ### Tablas
 Usuario: `3`
+| Nombre | Tipo de Dato | NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| --- | --- | --- | --- | --- |
+| `ID` | INT | NO | SÍ | - |
+| `NOMBRE` | VARCHAR(30) | NO | - | - |
+| `CONTRASENHA` | VARCHAR(60) | SI | - | - |
+
+ATRIBUTO: `3`
+| Nombre | Tipo de Dato | NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| --- | --- | --- | --- | --- |
+| `ID` | INT | NO | SÍ | - |
+| `NOMBRE` | VARCHAR(35) | NO | - | - |
+| `IMAGEN_TIPO_ATRIBUTO` | VARCHAR(200) | SI | - | - |
+
+Personaje: `3`
 | Nombre | Tipo de Dato | NULL | CLAVE PRIMARIA |
 | --- | --- | --- | --- |
 | `ID` | INT | NO | SÍ |
