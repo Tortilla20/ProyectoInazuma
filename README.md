@@ -35,28 +35,38 @@ anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/in
 
 ### Tablas
 Usuario: `3`
-| Nombre | Tipo de Dato | NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| Nombre | Tipo de Dato | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
 | --- | --- | --- | --- | --- |
 | `ID` | INT | NO | SÍ | - |
 | `NOMBRE` | VARCHAR(30) | NO | - | - |
-| `CONTRASENHA` | VARCHAR(60) | SI | - | - |
+| `CONTRASENHA` | VARCHAR(60) | SÍ | - | - |
 
 ATRIBUTO: `3`
-| Nombre | Tipo de Dato | NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| Nombre | Tipo de Dato | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
 | --- | --- | --- | --- | --- |
 | `ID` | INT | NO | SÍ | - |
 | `NOMBRE` | VARCHAR(35) | NO | - | - |
-| `IMAGEN_TIPO_ATRIBUTO` | VARCHAR(200) | SI | - | - |
+| `IMAGEN_TIPO_ATRIBUTO` | VARCHAR(200) | SÍ | - | - |
 
 Personaje: `9`
-| Nombre | Tipo de Dato | NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| Nombre | Tipo de Dato | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
 | --- | --- | --- | --- | --- |
 | `ID` | INT | NO | SÍ | - |
 | `NOMBRE` | VARCHAR(35) | NO | - | - |
-| `ALIAS` | VARCHAR(25) | SI | - | - |
-| `DESCRIPCION` | VARCHAR(100) | SI | - | - |
-| `POSICION` | VARCHAR(5) | SI | - | - |
-| `GENERO` | VARCHAR(20) | SI | - | - |
-| `IMAGEN` | VARCHAR(200) | SI | - | - |
-| `ID_ATRIBUTO` | INT | SI | - | SI |
-| `ID_USUARIO` | INT | SI | - | SI |
+| `ALIAS` | VARCHAR(25) | SÍ | - | - |
+| `DESCRIPCION` | VARCHAR(100) | SÍ | - | - |
+| `POSICION` | VARCHAR(5) | SÍ | - | - |
+| `GENERO` | VARCHAR(20) | SÍ | - | - |
+| `IMAGEN` | VARCHAR(200) | SÍ | - | - |
+| `ID_ATRIBUTO` | INT | SÍ | - | SÍ |
+| `ID_USUARIO` | INT | SÍ | - | SÍ |
+
+EQUIPO: `6`
+| Nombre | Tipo de Dato | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| --- | --- | --- | --- | --- |
+| `ID` | INT | NO | SÍ | - |
+| `NOMBRE` | VARCHAR(35) | NO | - | - |
+| `REGION` | VARCHAR(25) | NO | - | - |
+| `ESCUDO` | VARCHAR(200) | SÍ | - | - |
+| `ID_CAPITAN` | INT | SÍ | - | SÍ |
+| `ID_ENTRENADOR` | INT | SÍ | - | SÍ |
