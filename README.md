@@ -81,8 +81,16 @@ SUPERTECNICA: `6`
 | `TIPO` | VARCHAR(35) | NO | - | - |
 | `ID_ATRIBUTO` | INT | SÍ | - | SÍ |
 
+### RELACIONES N:M
+
 JUEGA: `2`
 | NOMBRE | TIPO DE DATO | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
 | --- | --- | --- | --- | --- |
 | `ID_PERSONAJE` | INT | NO | SÍ | PERSONAJE(ID) |
 | `ID_EQUIPO` | INT | NO | SÍ | EQUIPO(ID) |
+
+TIENE: `2`
+| NOMBRE | TIPO DE DATO | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| --- | --- | --- | --- | --- |
+| `ID_PERSONAJE` | INT | NO | SÍ | PERSONAJE(ID) |
+| `ID_SUPERTECNICA` | INT | NO | SÍ | SUPERTECNICA(ID) |
