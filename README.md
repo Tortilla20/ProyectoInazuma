@@ -70,3 +70,13 @@ EQUIPO: `6`
 | `ESCUDO` | VARCHAR(200) | SÍ | - | - |
 | `ID_CAPITAN` | INT | SÍ | - | SÍ |
 | `ID_ENTRENADOR` | INT | SÍ | - | SÍ |
+
+SUPERTECNICA: `6`
+| Nombre | Tipo de Dato | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| --- | --- | --- | --- | --- |
+| `ID` | INT | NO | SÍ | - |
+| `NOMBRE` | VARCHAR(35) | NO | - | - |
+| `COORDINADA` | BOOLEAN | NO | - | - |
+| `POTENCIA` | VARCHAR(25) | NO | - | - |
+| `TIPO` | VARCHAR(35) | NO | - | - |
+| `ID_ATRIBUTO` | INT | SÍ | - | SÍ |
