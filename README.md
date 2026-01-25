@@ -34,6 +34,8 @@ anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/in
 (UNA VEZ TERMINADO EL DRAW.IO, INSERTAR IMAGEN)
 
 ### Tablas
+
+### ENTIDADES
 Usuario: `3`
 | NOMBRE | TIPO DE DATO | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
 | --- | --- | --- | --- | --- |
