@@ -14,3 +14,8 @@ sin ninguna credencial.
 
 Una vez dentro, podrá crear, modificar y eliminar personajes además
 de consultar la información proporcionada por el programa en la base de datos 
+
+---
+
+## 1. Manual para desarrolladores
+### Requisitos
