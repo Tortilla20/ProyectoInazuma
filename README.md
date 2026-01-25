@@ -34,4 +34,4 @@ anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/in
 (UNA VEZ TERMINADO EL DRAW.IO, INSERTAR IMAGEN)
 
 ### Tablas
-Usuario: '3'
+Usuario: `3´
