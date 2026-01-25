@@ -25,6 +25,6 @@ esta versión o superiores para poder iniciar el programa [(descargar)](https://
 [(descargar)](https://ant.apache.org/)
 - **MySQL**: Para la base de datos, se utilizó MySQL como sistema de gestión de bases de datos, si no se tiene,
 habría que instalarlo [(descargar)](https://dev.mysql.com/downloads/mysql/)
--**IDE Utilizado**: Por último, el proyecto de desarrollo en el IDE Netbeans, si no se tiene instalado, no hace falta
+- **IDE Utilizado**: Por último, el proyecto de desarrollo en el IDE Netbeans, si no se tiene instalado, no hace falta
 instalarlo porque se puede utilizar cualquier otro IDE compatible con Java, pero se recomiendo utilizar el
 anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/index.html)
