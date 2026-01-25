@@ -35,21 +35,21 @@ anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/in
 
 ### Tablas
 Usuario: `3`
-| Nombre | Tipo de Dato | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| NOMBRE | TIPO DE DATO | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
 | --- | --- | --- | --- | --- |
 | `ID` | INT | NO | SÍ | - |
 | `NOMBRE` | VARCHAR(30) | NO | - | - |
 | `CONTRASENHA` | VARCHAR(60) | SÍ | - | - |
 
 ATRIBUTO: `3`
-| Nombre | Tipo de Dato | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| NOMBRE | TIPO DE DATO | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
 | --- | --- | --- | --- | --- |
 | `ID` | INT | NO | SÍ | - |
 | `NOMBRE` | VARCHAR(35) | NO | - | - |
 | `IMAGEN_TIPO_ATRIBUTO` | VARCHAR(200) | SÍ | - | - |
 
 Personaje: `9`
-| Nombre | Tipo de Dato | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| NOMBRE | TIPO DE DATO | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
 | --- | --- | --- | --- | --- |
 | `ID` | INT | NO | SÍ | - |
 | `NOMBRE` | VARCHAR(35) | NO | - | - |
@@ -62,7 +62,7 @@ Personaje: `9`
 | `ID_USUARIO` | INT | SÍ | - | SÍ |
 
 EQUIPO: `6`
-| Nombre | Tipo de Dato | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| NOMBRE | TIPO DE DATO | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
 | --- | --- | --- | --- | --- |
 | `ID` | INT | NO | SÍ | - |
 | `NOMBRE` | VARCHAR(35) | NO | - | - |
@@ -72,7 +72,7 @@ EQUIPO: `6`
 | `ID_ENTRENADOR` | INT | SÍ | - | SÍ |
 
 SUPERTECNICA: `6`
-| Nombre | Tipo de Dato | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| NOMBRE | TIPO DE DATO | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
 | --- | --- | --- | --- | --- |
 | `ID` | INT | NO | SÍ | - |
 | `NOMBRE` | VARCHAR(35) | NO | - | - |
@@ -80,3 +80,9 @@ SUPERTECNICA: `6`
 | `POTENCIA` | VARCHAR(25) | NO | - | - |
 | `TIPO` | VARCHAR(35) | NO | - | - |
 | `ID_ATRIBUTO` | INT | SÍ | - | SÍ |
+
+JUEGA: `2`
+| NOMBRE | TIPO DE DATO | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| --- | --- | --- | --- | --- |
+| `ID_PERSONAJE` | INT | NO | SÍ | PERSONAJE(ID) |
+| `ID_EQUIPO` | INT | NO | SÍ | EQUIPO(ID) |
