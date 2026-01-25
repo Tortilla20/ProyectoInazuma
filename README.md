@@ -35,3 +35,8 @@ anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/in
 
 ### Tablas
 Usuario: `3`
+| Nombre | Tipo de Dato | NULL | CLAVE PRIMARIA |
+| --- | --- | --- | --- |
+| `ID` | INT | NO | SÍ |
+| `NOMBRE` | VARCHAR(30) | NO | - |
+| `CONTRASENHA` | VARCHAR(60) | SI | - |
