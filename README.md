@@ -48,9 +48,15 @@ ATRIBUTO: `3`
 | `NOMBRE` | VARCHAR(35) | NO | - | - |
 | `IMAGEN_TIPO_ATRIBUTO` | VARCHAR(200) | SI | - | - |
 
-Personaje: `3`
-| Nombre | Tipo de Dato | NULL | CLAVE PRIMARIA |
-| --- | --- | --- | --- |
-| `ID` | INT | NO | SÍ |
-| `NOMBRE` | VARCHAR(30) | NO | - |
-| `CONTRASENHA` | VARCHAR(60) | SI | - |
+Personaje: `9`
+| Nombre | Tipo de Dato | NULL | CLAVE PRIMARIA | CLAVE FORANEA |
+| --- | --- | --- | --- | --- |
+| `ID` | INT | NO | SÍ | - |
+| `NOMBRE` | VARCHAR(35) | NO | - | - |
+| `ALIAS` | VARCHAR(25) | SI | - | - |
+| `DESCRIPCION` | VARCHAR(100) | SI | - | - |
+| `POSICION` | VARCHAR(5) | SI | - | - |
+| `GENERO` | VARCHAR(20) | SI | - | - |
+| `IMAGEN` | VARCHAR(200) | SI | - | - |
+| `ID_ATRIBUTO` | INT | SI | - | SI |
+| `ID_USUARIO` | INT | SI | - | SI |
