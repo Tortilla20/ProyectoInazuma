@@ -19,3 +19,5 @@ de consultar la información proporcionada por el programa en la base de datos
 
 ## 1. Manual para desarrolladores
 ### Requisitos
+- Java SE 17 o superior: El proyecto se desarrollo usando Java 17, por lo cuál, se necesita
+esta versión o superiores para poder iniciar el programa [descargar](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
