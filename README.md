@@ -17,7 +17,8 @@ de consultar la información proporcionada por el programa en la base de datos
 
 ---
 
-## 1. Manual para desarrolladores
+## 1. Manual técnico para desarrolladores
+
 ### Requisitos
 - **Java SE 17 o superior**: El proyecto se desarrollo usando Java 17, por lo cuál, se necesita
 esta versión o superiores para poder iniciar el programa [(descargar)](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
@@ -28,3 +29,8 @@ habría que instalarlo [(descargar)](https://dev.mysql.com/downloads/mysql/)
 - **IDE Utilizado**: Por último, el proyecto de desarrollo en el IDE Netbeans, si no se tiene instalado, no hace falta
 instalarlo porque se puede utilizar cualquier otro IDE compatible con Java, pero se recomiendo utilizar el
 anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/index.html)
+
+### Base de datos (MODELO ENTIDAD - RELACIÓN)
+(UNA VEZ TERMINADO EL DRAW.IO, INSERTAR IMAGEN)
+
+### Tablas
