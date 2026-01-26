@@ -93,19 +93,7 @@ public class OperacionBD {
                 System.out.println(rs.getString(7));
                 System.out.println(rs.getInt(8));*/
                 Atributo atributo = null;
-                Personaje p = new Personaje(rs.getInt(1), rs.getString(2), atributo, usuarioActual);
-                p.setAlias(rs.getString(3));
-                p.setDescription(rs.getString(4));
-                p.setPosicion(rs.getString(5));
-                p.setGenero(rs.getString(6));
-                p.setImage(rs.getString(7));
-                int id_atributo = rs.getInt(8);
-                for (Atributo a : listaAtributos) {
-                    if (a.getId() == id_atributo) {
-                        atributo = a;
-                    }
-                }
-                p.setAtributo(atributo);
+                Personaje p = crearPersonajeModelo(rs, atributo);
                 listaPersonajes.add(p);
             }
 
@@ -113,6 +101,40 @@ public class OperacionBD {
             Logger.getLogger(OperacionBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return listaPersonajes;
+    }
+
+    private static Personaje crearPersonajeModelo(ResultSet rs, Atributo atributo) throws SQLException {
+        Personaje p = new Personaje(rs.getInt(1), rs.getString(2), atributo, usuarioActual);
+        p.setAlias(rs.getString(3));
+        p.setDescription(rs.getString(4));
+        p.setPosicion(rs.getString(5));
+        p.setGenero(rs.getString(6));
+        p.setImage(rs.getString(7));
+        int id_atributo = rs.getInt(8);
+        for (Atributo a : listaAtributos) {
+            if (a.getId() == id_atributo) {
+                atributo = a;
+            }
+        }
+        p.setAtributo(atributo);
+        return p;
+    }
+    
+    public static Personaje getPersonaje(int id){
+        Personaje personaje = null;
+        try {
+            String sentencia = "SELECT * FROM personaje WHERE id = " + id;
+            Statement st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sentencia);
+            
+            while(rs.next()){
+                Atributo atributo = null;
+                personaje = crearPersonajeModelo(rs, atributo);
+            }
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        return personaje;
     }
 
     public static void addPersonaje(Personaje personaje) {
@@ -340,6 +362,26 @@ public class OperacionBD {
             System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
 
+    }
+    
+    public static List<Equipo> getEquiposDePersonaje(Personaje personaje){
+        List<Equipo> listaEquipos = new ArrayList<>();
+        String sentencia = "SELECT Equipo.id, Equipo,nombre, Equipo.region, Equipo.escudo,Equipo.id_capitan, Equipo.id_entrenador "
+                    + "FROM personaje JOIN juega ON id.personaje JOIN equipo ON Equipo.id.equipo "
+                    + "WHERE juega.id_personaje = '" + personaje.getId() + "';" ;
+        try { 
+            Statement st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sentencia);
+            while(rs.next()){
+                Personaje capitan = getPersonaje(rs.getInt(5));
+                Personaje entrenador = getPersonaje(rs.getInt(6));
+                listaEquipos.add(new Equipo(rs.getInt(1),rs.getString(2),rs.getString(3), rs.getString(4), capitan, entrenador));
+            }
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        
+        return listaEquipos;
     }
 
 }
