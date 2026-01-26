@@ -72,10 +72,10 @@ CREATE TABLE TIENE (
 
 
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Xene', 'Xene', 'El guerrero definitivo, nacido de la Operación Génesis. Sus disparos surcan el cielo como cometas', 'FW','Hombre', 'https://dxi4wb638ujep.cloudfront.net/1/k/j/q/jqm20m_shls.webp', 1,2);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Spencer Gates', 'Cosplay', 'Disfruta de novelas cursis y participa en concursos de escritura cada mes', 'DF','Neutral' ,'https://dxi4wb638ujep.cloudfront.net/1/k/v/p/vpocwdtqids.webp', 2,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Spencer Gates', 'Cosplay', 'Disfruta de novelas cursis y participa en concursos de escritura cada mes', 'DF','Neutro' ,'https://dxi4wb638ujep.cloudfront.net/1/k/v/p/vpocwdtqids.webp', 2,2);
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Marvin Murdock', 'Marvin', 'El mayor de tres hermanos y capitán de Kirkwood. Un perfeccionista que considera la victoria sagrada', 'FW', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/p/c/pcfzrjfd6jk.webp', 3,2);
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Byron Love', 'Aphrody', 'Cautiva a sus rivales con una gracia artística, jugando con el aura de una deidad desde lo alto', 'MF', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/d/y/dykb3jbxeis.webp', 4,2);
-INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Sean Lavender', 'Lavender', 'Ama la jardinería y cree firmemente en el poder calmante de la lavanda', 'FW', 'Neutral','https://dxi4wb638ujep.cloudfront.net/1/k/n/0/n0ogwdtbj1m.webp', 4,2);
+INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Sean Lavender', 'Lavender', 'Ama la jardinería y cree firmemente en el poder calmante de la lavanda', 'FW', 'Neutro','https://dxi4wb638ujep.cloudfront.net/1/k/n/0/n0ogwdtbj1m.webp', 4,2);
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Eaton Rampage', 'Rampage', 'El chiste de la dieta de "ver comida" fue hecho para él. Come cualquier cosa que vea', 'FW', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/1/m/1mbqxxoacwk.webp', 3,2);
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Ian Smith', 'Smith', 'No hay dónde correr ni dónde esconderse de su mirada afilada como la de un halcón', 'DF', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/6/s/6ssmkasv0uu.webp', 2,2);
 INSERT INTO PERSONAJE (NOMBRE, ALIAS, DESCRIPCION, POSICION, GENERO ,IMAGEN, ID_ATRIBUTO, ID_USUARIO) VALUES ('Changsu Choi', 'Choi', 'Un creador de juego nato cuyo control preciso puede incluso rivalizar con Jude', 'MF', 'Hombre','https://dxi4wb638ujep.cloudfront.net/1/k/l/h/lhrjdsednmc.webp', 1,2);
@@ -89,17 +89,17 @@ INSERT INTO ATRIBUTO (NOMBRE, IMAGEN_TIPO_ATRIBUTO) VALUES ('Montaña', 'https:/
 INSERT INTO ATRIBUTO (NOMBRE, IMAGEN_TIPO_ATRIBUTO) VALUES ('Bosque', 'https://static.wikia.nocookie.net/inazuma-eleven/images/0/0b/Forest_icon_%28VR%29.png');
 
 
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Raimon', 'Japón', 'https://static.wikia.nocookie.net/inazuma/images/e/e1/Raimon_FF_Emblema.png/revision/latest?cb=20210620190405&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Zeus', 'Grecia', 'https://static.wikia.nocookie.net/inazuma/images/f/ff/Escudo_Zeus_FF.png/revision/latest?cb=20210620190427&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Royal Academy', 'Japón', 'https://static.wikia.nocookie.net/inazuma/images/5/52/Escudo_-_Royal_Academy_%28SD%29.png/revision/latest?cb=20231225133321&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Kirkwood', 'Japón', 'https://static.wikia.nocookie.net/inazuma/images/4/40/Escudo_-_Kirkwood_%28SD%29.png/revision/latest?cb=20240117213804&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Genesis', 'Japón', 'https://static.wikia.nocookie.net/inazuma/images/9/93/Escudo_G%C3%A9nesis_%28IE_HVR%29.png/revision/latest?cb=20240401112105&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('The Kingdom', 'Brasil', 'https://static.wikia.nocookie.net/inazuma/images/0/0c/Escudo_-_Os_Reis_%28SD%29.png/revision/latest?cb=20240918154716&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Little Gigant', 'África', 'https://static.wikia.nocookie.net/inazuma/images/d/d1/Logo_peque%C3%B1os_gigantes.png/revision/latest?cb=20110617155403&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Orpheus', 'https://static.wikia.nocookie.net/inazuma/images/8/8a/Escudo_-_Orfeo_%28SD%29.png/revision/latest?cb=20240906212620&path-prefix=es', 'IMAGE');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Unicorn', 'Estados Unidos', 'https://static.wikia.nocookie.net/inazuma/images/1/1b/Unicorn_Emblema.png/revision/latest?cb=20240906134136&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Fire Dragon', 'Corea', 'https://static.wikia.nocookie.net/inazuma/images/8/87/Escudo_-_Dragones_de_Fuego_%28Strikers%29.png/revision/latest?cb=20240815214436&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Desert Lion', 'Qatar', 'https://static.wikia.nocookie.net/inazuma/images/d/d9/Leones_del_Desierto_Emblema.png/revision/latest?cb=20240906141235&path-prefix=es');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Raimon', 'Japón', 'IMAGE');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Zeus', 'Grecia', 'IMAGE');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Royal Academy', 'Japón', 'IMAGE');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Kirkwood', 'Japón', 'IMAGE');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Genesis', 'Japón', 'IMAGE');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('The Kingdom', 'Brasil', 'IMAGE');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Little Gigant', 'África', 'IMAGE');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Orpheus', 'Italia', 'IMAGE');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Unicorn', 'Estados Unidos', 'IMAGE');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Fire Dragon', 'Corea', 'IMAGE');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Desert Lion', 'Qatar', 'IMAGE');
 
 INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUES ('Tornado de Fuego', 0, 'Alta', 'Disparo', 1);
 INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUES ('Corte del Viento', 0, 'Media', 'Disparo', 2);
@@ -117,6 +117,4 @@ INSERT INTO USUARIO (NOMBRE,CONTRASENHA) VALUES ('admin','abc123.');
 INSERT INTO USUARIO (NOMBRE,CONTRASENHA) VALUES ('invitado','abc123.');
 
 SET FOREIGN_KEY_CHECKS=1;
-
-
 

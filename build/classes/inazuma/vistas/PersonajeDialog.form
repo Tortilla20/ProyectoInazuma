@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
-  <NonVisualComponents>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTable" name="jTable2">
-          <Properties>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
-                <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                <Column editable="true" title="Title 4" type="java.lang.Object"/>
-              </Table>
-            </Property>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
@@ -47,45 +24,64 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="iconoPanel" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="iconoLabel" min="-2" pref="134" max="-2" attributes="0"/>
+                          <Component id="descripcionLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="nombreLabel" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="aliasLabel" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="nombreTextField" max="32767" attributes="0"/>
-                                  <Component id="aliasTextField" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="nombreLabel" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="aliasLabel" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="generoLabel" linkSize="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="atributoLabel" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="posicionLabel" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="iconoTextLabelLabel" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="nombreTextField" max="32767" attributes="0"/>
+                          <Component id="aliasTextField" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="atributoLabel" linkSize="1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="atributoTextField" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="generoComboBox" linkSize="9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="atributoComboBox" linkSize="9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="posicionComboBox" linkSize="9" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="generoLabel" linkSize="1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="generoTextField" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="iconoTextField" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <Component id="supertecnicasTableScrollPane" alignment="0" pref="480" max="32767" attributes="0"/>
+                  <Component id="equiposTableScrollPane" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="confirmarButton" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="supertecnicasTableScrollPane" pref="480" max="32767" attributes="0"/>
-                  <Component id="supertecnicasLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="equiposLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="equiposTableScrollPane" alignment="0" max="32767" attributes="0"/>
+                  <Component id="descripcionTextAreaScrollPane" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="supertecnicasLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="supertecnicasComboBox" min="-2" pref="230" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="anhadirSupertecnicaButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="eliminarSupertecnicaButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="equiposLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="equiposComboBox" min="-2" pref="230" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="anhadirEquipoButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="eliminarEquipoButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -94,38 +90,59 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="iconoPanel" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nombreLabel" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nombreTextField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="nombreLabel" linkSize="3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="aliasLabel" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="aliasTextField" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="aliasLabel" linkSize="4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="generoLabel" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="generoTextField" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="generoLabel" linkSize="8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="atributoLabel" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="atributoTextField" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="posicionLabel" linkSize="7" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="atributoLabel" linkSize="6" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="nombreTextField" linkSize="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="aliasTextField" linkSize="4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="generoComboBox" linkSize="8" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="posicionComboBox" linkSize="7" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="atributoComboBox" linkSize="6" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="iconoLabel" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="supertecnicasLabel" linkSize="6" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="iconoTextLabelLabel" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="iconoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="descripcionLabel" linkSize="6" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="supertecnicasTableScrollPane" pref="100" max="32767" attributes="0"/>
+              <Component id="descripcionTextAreaScrollPane" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="equiposLabel" linkSize="6" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="supertecnicasLabel" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="eliminarSupertecnicaButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="anhadirSupertecnicaButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="supertecnicasComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="equiposTableScrollPane" pref="100" max="32767" attributes="0"/>
-              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="supertecnicasTableScrollPane" pref="105" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="equiposLabel" linkSize="6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="eliminarEquipoButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="anhadirEquipoButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="equiposComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="equiposTableScrollPane" pref="105" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="confirmarButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
@@ -202,21 +219,6 @@
         <Property name="text" type="java.lang.String" value="Genero:"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="iconoPanel">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
     <Component class="javax.swing.JLabel" name="atributoLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Atributo:"/>
@@ -241,14 +243,131 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="generoTextField">
+    <Component class="javax.swing.JComboBox" name="generoComboBox">
       <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="&quot;&quot;" type="code"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Hombre"/>
+            <StringItem index="1" value="Mujer"/>
+            <StringItem index="2" value="Desconocido"/>
+            <StringItem index="3" value="Neutral"/>
+          </StringArray>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="atributoTextField">
+    <Component class="javax.swing.JComboBox" name="atributoComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Viento"/>
+            <StringItem index="1" value="Bosque"/>
+            <StringItem index="2" value="Fuego"/>
+            <StringItem index="3" value="Monta&#xf1;a"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="posicionLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Posici&#xf3;n:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="posicionComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="GK"/>
+            <StringItem index="1" value="DF"/>
+            <StringItem index="2" value="MF"/>
+            <StringItem index="3" value="FW"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="descripcionLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Descripci&#xf3;n:"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="descripcionTextAreaScrollPane">
+      <Properties>
+        <Property name="horizontalScrollBar" type="javax.swing.JScrollBar" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="null"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="descripcionTextArea">
+          <Properties>
+            <Property name="columns" type="int" value="1"/>
+            <Property name="lineWrap" type="boolean" value="true"/>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="wrapStyleWord" type="boolean" value="true"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="iconoLabel">
+    </Component>
+    <Component class="javax.swing.JButton" name="anhadirSupertecnicaButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="+"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="anhadirEquipoButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="+"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="eliminarSupertecnicaButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="eliminarEquipoButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="equiposComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="supertecnicasComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="iconoTextLabelLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Icono:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="iconoTextField">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="&quot;&quot;" type="code"/>

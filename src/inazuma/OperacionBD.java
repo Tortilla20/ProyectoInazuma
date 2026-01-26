@@ -54,6 +54,7 @@ public class OperacionBD {
     }
 
     public static List<Personaje> getPersonajes(String busqueda, String genero, String posicion, String atributoEntrante) {
+        
         List<Personaje> listaPersonajes = new ArrayList<>();
         String consultaSQL = "SELECT * FROM personaje WHERE Nombre LIKE '%"+busqueda+"%' ";
         StringBuilder sb = new StringBuilder();
@@ -68,14 +69,19 @@ public class OperacionBD {
                 sb.append("AND ID_USUARIO = " + usuarioActual.getId() + " ");
 
             }
-            if(!genero.isBlank() || !genero.isEmpty()){
-                sb.append("AND GENERO " + genero + " ");
+            if (!genero.isBlank() || !genero.isEmpty()) {
+                sb.append("AND GENERO LIKE '" + genero + "' ");
             }
-            if(!posicion.isBlank() || !posicion.isEmpty()){
-                sb.append("AND POSICION " + posicion + " ");
+            if (!posicion.isBlank() || !posicion.isEmpty()) {
+                sb.append("AND POSICION LIKE '" + posicion + "' ");
             }
-            if(!atributoEntrante.isBlank() || !posicion.isEmpty()){
-                sb.append("AND ATRIBUTO " + atributoEntrante + " ");
+            if (!atributoEntrante.isBlank() || !atributoEntrante.isEmpty()) {
+                for (Atributo a : listaAtributos) {
+                    if (a.getNombre().equals(atributoEntrante)) {
+                        atributoEntrante = String.valueOf(a.getId());
+                    }
+                }
+                sb.append("AND ID_ATRIBUTO LIKE '" + atributoEntrante + "' ");
             }
             sb.append(";");
 
@@ -93,19 +99,7 @@ public class OperacionBD {
                 System.out.println(rs.getString(7));
                 System.out.println(rs.getInt(8));*/
                 Atributo atributo = null;
-                Personaje p = new Personaje(rs.getInt(1), rs.getString(2), atributo, usuarioActual);
-                p.setAlias(rs.getString(3));
-                p.setDescription(rs.getString(4));
-                p.setPosicion(rs.getString(5));
-                p.setGenero(rs.getString(6));
-                p.setImage(rs.getString(7));
-                int id_atributo = rs.getInt(8);
-                for (Atributo a : listaAtributos) {
-                    if (a.getId() == id_atributo) {
-                        atributo = a;
-                    }
-                }
-                p.setAtributo(atributo);
+                Personaje p = crearPersonajeModelo(rs, atributo);
                 listaPersonajes.add(p);
             }
 
@@ -115,6 +109,40 @@ public class OperacionBD {
         return listaPersonajes;
     }
 
+    private static Personaje crearPersonajeModelo(ResultSet rs, Atributo atributo) throws SQLException {
+        Personaje p = new Personaje(rs.getInt(1), rs.getString(2), atributo, usuarioActual);
+        p.setAlias(rs.getString(3));
+        p.setDescription(rs.getString(4));
+        p.setPosicion(rs.getString(5));
+        p.setGenero(rs.getString(6));
+        p.setImage(rs.getString(7));
+        int id_atributo = rs.getInt(8);
+        for (Atributo a : listaAtributos) {
+            if (a.getId() == id_atributo) {
+                atributo = a;
+            }
+        }
+        p.setAtributo(atributo);
+        return p;
+    }
+    
+    public static Personaje getPersonaje(int id){
+        Personaje personaje = null;
+        try {
+            String sentencia = "SELECT * FROM personaje WHERE id = " + id;
+            Statement st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sentencia);
+            
+            while(rs.next()){
+                Atributo atributo = null;
+                personaje = crearPersonajeModelo(rs, atributo);
+            }
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        return personaje;
+    }
+    
     public static void addPersonaje(Personaje personaje) {
         String sentencia = "INSERT INTO personaje (nombre,alias,descripcion,posicion,id_atributo,genero) VALUES (?,?,?,?,?,?)";
 
@@ -135,6 +163,8 @@ public class OperacionBD {
 
     }
 
+    
+    
     public static void addSupertecnica(Supertecnica supertecnica) {
 
         try {
