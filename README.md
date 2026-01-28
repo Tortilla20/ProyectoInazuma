@@ -30,8 +30,9 @@ habría que instalarlo [(descargar)](https://dev.mysql.com/downloads/mysql/)
 instalarlo porque se puede utilizar cualquier otro IDE compatible con Java, pero se recomiendo utilizar el
 anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/index.html)
 
-### Base de datos (MODELO ENTIDAD - RELACIÓN)
-(UNA VEZ TERMINADO EL DRAW.IO, INSERTAR IMAGEN)
+<p align="center">
+  <img src="mediaReadme/Diagrama" alt="Alt">
+</p>
 
 ### Tablas
 
