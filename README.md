@@ -31,7 +31,7 @@ instalarlo porque se puede utilizar cualquier otro IDE compatible con Java, pero
 anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/index.html)
 
 <p align="center">
-  <img src="mediaReadme/Diagrama" alt="Alt">
+  <img src="mediaReadme/Diagrama.png" alt="Alt">
 </p>
 
 ### Tablas
