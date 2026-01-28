@@ -1,5 +1,12 @@
 package inazuma.vistas;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author dam2_alu09@inf.ald
@@ -14,6 +21,7 @@ public class PersonajeDialog extends javax.swing.JDialog {
         initComponents();
         this.setTitle("Jugador");
     }
+
     public PersonajeDialog(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -29,8 +37,6 @@ public class PersonajeDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
         nombreLabel = new javax.swing.JLabel();
         aliasLabel = new javax.swing.JLabel();
         supertecnicasLabel = new javax.swing.JLabel();
@@ -40,26 +46,26 @@ public class PersonajeDialog extends javax.swing.JDialog {
         equiposTableScrollPane = new javax.swing.JScrollPane();
         equiposTable = new javax.swing.JTable();
         generoLabel = new javax.swing.JLabel();
-        iconoPanel = new javax.swing.JPanel();
         atributoLabel = new javax.swing.JLabel();
         confirmarButton = new javax.swing.JButton();
         nombreTextField = new javax.swing.JTextField();
         aliasTextField = new javax.swing.JTextField();
-        generoTextField = new javax.swing.JTextField();
-        atributoTextField = new javax.swing.JTextField();
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        generoComboBox = new javax.swing.JComboBox<>();
+        atributoComboBox = new javax.swing.JComboBox<>();
+        posicionLabel = new javax.swing.JLabel();
+        posicionComboBox = new javax.swing.JComboBox<>();
+        descripcionLabel = new javax.swing.JLabel();
+        descripcionTextAreaScrollPane = new javax.swing.JScrollPane();
+        descripcionTextArea = new javax.swing.JTextArea();
+        iconoLabel = new javax.swing.JLabel();
+        anhadirSupertecnicaButton = new javax.swing.JButton();
+        anhadirEquipoButton = new javax.swing.JButton();
+        eliminarSupertecnicaButton = new javax.swing.JButton();
+        eliminarEquipoButton = new javax.swing.JButton();
+        equiposComboBox = new javax.swing.JComboBox<>();
+        supertecnicasComboBox = new javax.swing.JComboBox<>();
+        iconoTextLabelLabel = new javax.swing.JLabel();
+        iconoTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -101,17 +107,6 @@ public class PersonajeDialog extends javax.swing.JDialog {
 
         generoLabel.setText("Genero:");
 
-        javax.swing.GroupLayout iconoPanelLayout = new javax.swing.GroupLayout(iconoPanel);
-        iconoPanel.setLayout(iconoPanelLayout);
-        iconoPanelLayout.setHorizontalGroup(
-            iconoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        iconoPanelLayout.setVerticalGroup(
-            iconoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
         atributoLabel.setText("Atributo:");
 
         confirmarButton.setText("Confirmar");
@@ -120,9 +115,35 @@ public class PersonajeDialog extends javax.swing.JDialog {
 
         aliasTextField.setText("");
 
-        generoTextField.setText("");
+        generoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hombre", "Mujer", "Desconocido", "Neutral" }));
 
-        atributoTextField.setText("");
+        atributoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Viento", "Bosque", "Fuego", "Montaña" }));
+
+        posicionLabel.setText("Posición:");
+
+        posicionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "GK", "DF", "MF", "FW" }));
+
+        descripcionLabel.setText("Descripción:");
+
+        descripcionTextAreaScrollPane.setHorizontalScrollBar(null);
+
+        descripcionTextArea.setColumns(1);
+        descripcionTextArea.setLineWrap(true);
+        descripcionTextArea.setRows(5);
+        descripcionTextArea.setWrapStyleWord(true);
+        descripcionTextAreaScrollPane.setViewportView(descripcionTextArea);
+
+        anhadirSupertecnicaButton.setText("+");
+
+        anhadirEquipoButton.setText("+");
+
+        eliminarSupertecnicaButton.setText("-");
+
+        eliminarEquipoButton.setText("-");
+
+        iconoTextLabelLabel.setText("Icono:");
+
+        iconoTextField.setText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,101 +153,206 @@ public class PersonajeDialog extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(iconoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(iconoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(descripcionLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombreLabel)
+                            .addComponent(aliasLabel)
+                            .addComponent(generoLabel)
+                            .addComponent(atributoLabel)
+                            .addComponent(posicionLabel)
+                            .addComponent(iconoTextLabelLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombreTextField)
+                            .addComponent(aliasTextField)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nombreLabel)
-                                    .addComponent(aliasLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nombreTextField)
-                                    .addComponent(aliasTextField)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(atributoLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(atributoTextField))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(generoLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(generoTextField))))
+                                    .addComponent(generoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(atributoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(posicionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(iconoTextField)))
+                    .addComponent(supertecnicasTableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                    .addComponent(equiposTableScrollPane)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(confirmarButton))
-                    .addComponent(supertecnicasTableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
-                    .addComponent(supertecnicasLabel)
-                    .addComponent(equiposLabel)
-                    .addComponent(equiposTableScrollPane))
+                    .addComponent(descripcionTextAreaScrollPane)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(supertecnicasLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(supertecnicasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(anhadirSupertecnicaButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(eliminarSupertecnicaButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(equiposLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(equiposComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(anhadirEquipoButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(eliminarEquipoButton)))
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {aliasLabel, atributoLabel, generoLabel, nombreLabel});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {aliasLabel, atributoLabel, generoLabel, iconoTextLabelLabel, nombreLabel, posicionLabel});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {atributoComboBox, generoComboBox, posicionComboBox});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(iconoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nombreLabel)
-                            .addComponent(nombreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(nombreLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(aliasLabel)
-                            .addComponent(aliasTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(aliasLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(generoLabel)
-                            .addComponent(generoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(generoLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(atributoLabel)
-                            .addComponent(atributoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(posicionLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(atributoLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(nombreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(aliasTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(generoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(posicionComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(atributoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(iconoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(supertecnicasLabel)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(iconoTextLabelLabel)
+                        .addComponent(iconoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(descripcionLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(supertecnicasTableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addComponent(descripcionTextAreaScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(equiposLabel)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(supertecnicasLabel)
+                    .addComponent(eliminarSupertecnicaButton)
+                    .addComponent(anhadirSupertecnicaButton)
+                    .addComponent(supertecnicasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(equiposTableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(supertecnicasTableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(equiposLabel)
+                    .addComponent(eliminarEquipoButton)
+                    .addComponent(anhadirEquipoButton)
+                    .addComponent(equiposComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(equiposTableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(confirmarButton)
                 .addContainerGap())
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {nombreLabel, nombreTextField});
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {aliasLabel, aliasTextField});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {aliasLabel, aliasTextField, iconoTextLabelLabel});
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {generoLabel, generoTextField});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {atributoComboBox, atributoLabel, descripcionLabel, equiposLabel, supertecnicasLabel});
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {atributoLabel, atributoTextField, equiposLabel, supertecnicasLabel});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {posicionComboBox, posicionLabel});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {generoComboBox, generoLabel});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setIconoLabel(ImageIcon imagen) {
+        iconoLabel.setIcon(imagen);
+    }
     
+    
+    
+    public void setNombreTextField(String text) {
+        nombreTextField.setText(text);
+    }
+
+    public String getNombreTextField() {
+        return nombreTextField.getText();
+    }
+    
+    public void setAliasTextField(String text) {
+        aliasTextField.setText(text);
+    }
+
+    public String getAliasTextField() {
+        return aliasTextField.getText();
+    }
+    
+    public void setDescripcionTextArea(String text) {
+        descripcionTextArea.setText(text);
+    }
+    
+    public String getDescripcionTextArea() {
+        return descripcionTextArea.getText();
+    }
+
+    public void setGeneroComboBoxSelectedItem(String text) {
+        for (int i = 0; i < generoComboBox.getModel().getSize(); i++) {
+            if (generoComboBox.getModel().getElementAt(i).toString().equals(text)) {
+                generoComboBox.setSelectedIndex(i);
+            }
+        }
+    }
+
+    public void setPosicionComboBoxSelectedItem(String text) {
+        for (int i = 0; i < posicionComboBox.getModel().getSize(); i++) {
+            if (posicionComboBox.getModel().getElementAt(i).toString().equals(text)) {
+                posicionComboBox.setSelectedIndex(i);
+            }
+        }
+    }
+
+    public void setAtributoComboBoxSelectedItem(String text) {
+        for (int i = 0; i < atributoComboBox.getModel().getSize(); i++) {
+            if (atributoComboBox.getModel().getElementAt(i).toString().equals(text)) {
+                atributoComboBox.setSelectedIndex(i);
+            }
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aliasLabel;
     private javax.swing.JTextField aliasTextField;
+    private javax.swing.JButton anhadirEquipoButton;
+    private javax.swing.JButton anhadirSupertecnicaButton;
+    private javax.swing.JComboBox<String> atributoComboBox;
     private javax.swing.JLabel atributoLabel;
-    private javax.swing.JTextField atributoTextField;
     private javax.swing.JButton confirmarButton;
+    private javax.swing.JLabel descripcionLabel;
+    private javax.swing.JTextArea descripcionTextArea;
+    private javax.swing.JScrollPane descripcionTextAreaScrollPane;
+    private javax.swing.JButton eliminarEquipoButton;
+    private javax.swing.JButton eliminarSupertecnicaButton;
+    private javax.swing.JComboBox<String> equiposComboBox;
     private javax.swing.JLabel equiposLabel;
     private javax.swing.JTable equiposTable;
     private javax.swing.JScrollPane equiposTableScrollPane;
+    private javax.swing.JComboBox<String> generoComboBox;
     private javax.swing.JLabel generoLabel;
-    private javax.swing.JTextField generoTextField;
-    private javax.swing.JPanel iconoPanel;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JLabel iconoLabel;
+    private javax.swing.JTextField iconoTextField;
+    private javax.swing.JLabel iconoTextLabelLabel;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JTextField nombreTextField;
+    private javax.swing.JComboBox<String> posicionComboBox;
+    private javax.swing.JLabel posicionLabel;
+    private javax.swing.JComboBox<String> supertecnicasComboBox;
     private javax.swing.JLabel supertecnicasLabel;
     private javax.swing.JTable supertecnicasTable;
     private javax.swing.JScrollPane supertecnicasTableScrollPane;

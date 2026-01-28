@@ -4,19 +4,22 @@
  */
 package inazuma.modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author dam2_alu02@inf.ald
  */
-public class Usuario {
+public class Usuario implements Serializable {
+
     private int id;
-    private String usuario;
-    private String contraseña;
+    private String name;
+    private String passwd;
 
     public Usuario(int id, String usuario, String contraseña) {
         this.id = id;
-        this.usuario = usuario;
-        this.contraseña = contraseña;
+        this.name = usuario;
+        this.passwd = contraseña;
     }
 
     public int getId() {
@@ -28,20 +31,18 @@ public class Usuario {
     }
 
     public String getUsuario() {
-        return usuario;
+        return name;
     }
 
     public void setUsuario(String usuario) {
-        this.usuario = usuario;
+        this.name = usuario;
     }
 
     public String getContraseña() {
-        return contraseña;
+        return passwd;
     }
 
     public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+        this.passwd = contraseña;
     }
-    
-    
 }

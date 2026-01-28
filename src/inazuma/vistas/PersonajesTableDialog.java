@@ -4,8 +4,10 @@ import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.util.Vector;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -79,7 +81,7 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
 
         anhadirButton.setText("Añadir..");
 
-        borrarButton.setText("Borrar..");
+        borrarButton.setText("Borrar");
 
         modificarButton.setText("Modificar..");
 
@@ -128,7 +130,7 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
                     .addComponent(atributoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(aplicarButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tablaJugadoresScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tablaJugadoresScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mostrarButton)
@@ -148,12 +150,37 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
     public void setMostrarButtonActionListener(ActionListener al){
         mostrarButton.addActionListener(al);
     }
-    
-    public String getJugadoresTableSelectedItem() {
-        if(this.jugadoresTable.getSelectedRow() == -1){
-            return null;
+
+    public String getAtributoComboBoxSelectedValue() {
+        if(atributoComboBox.getSelectedIndex()!=0){
+            return atributoComboBox.getSelectedItem().toString();
         }
-        return this.jugadoresTable.getValueAt(this.jugadoresTable.getSelectedRow(), 0).toString();
+        return "";
+    }
+
+    public String getGeneroComboBoxSelectedValue() {
+        if(generoComboBox.getSelectedIndex()!=0){
+            return generoComboBox.getSelectedItem().toString();
+        }
+        return "";
+    }
+
+    public String getNombreTextFieldValue() {
+        if(nombreTextField.getText()!=null){
+            return nombreTextField.getText();
+        }
+        return "";
+    }
+
+    public String getPosicionComboBoxSelectedValue() {
+        if(posicionComboBox.getSelectedIndex()!=0){
+            return posicionComboBox.getSelectedItem().toString();
+        }
+        return "";
+    }
+    
+    public int getJugadoresTableSelectedItem() {
+        return jugadoresTable.getSelectedRow();
     }
     
     public void addRowJugadoresTable(Vector row){

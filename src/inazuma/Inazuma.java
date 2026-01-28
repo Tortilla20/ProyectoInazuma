@@ -5,7 +5,7 @@
 package inazuma;
 
 import inazuma.controladores.MainFrameController;
-import inazuma.vistas.MainFrame;
+import inazuma.vistas.users.MainFrame;
 import java.sql.*;
 
 /**
@@ -17,10 +17,12 @@ public class Inazuma {
     public static void main(String[] args) {
         
         Connection conexion = OperacionBD.abrirConexion();
-        MainFrame mainView = new MainFrame();
+       /** MainFrame mainView = new MainFrame();
         MainFrameController fc = new MainFrameController(mainView);
-        mainView.setVisible(true);
+        mainView.setVisible(true);**/
         
+        MainFrame view = new MainFrame();
+        MainFrameController controller = new MainFrameController(view);
+        view.setVisible(true);
     }
-    
 }
