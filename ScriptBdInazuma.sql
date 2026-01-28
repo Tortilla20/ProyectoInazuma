@@ -93,17 +93,17 @@ INSERT INTO ATRIBUTO (NOMBRE, IMAGEN_TIPO_ATRIBUTO) VALUES ('Viento', 'https://s
 INSERT INTO ATRIBUTO (NOMBRE, IMAGEN_TIPO_ATRIBUTO) VALUES ('Montaña', 'https://static.wikia.nocookie.net/inazuma-eleven/images/6/6a/Mountain_icon_%28VR%29.png');
 INSERT INTO ATRIBUTO (NOMBRE, IMAGEN_TIPO_ATRIBUTO) VALUES ('Bosque', 'https://static.wikia.nocookie.net/inazuma-eleven/images/0/0b/Forest_icon_%28VR%29.png');
 
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Raimon', 'Japón', 'https://static.wikia.nocookie.net/inazuma/images/e/e1/Raimon_FF_Emblema.png/revision/latest?cb=20210620190405&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Zeus', 'Grecia', 'https://static.wikia.nocookie.net/inazuma/images/f/ff/Escudo_Zeus_FF.png/revision/latest?cb=20210620190427&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Royal Academy', 'Japón', 'https://static.wikia.nocookie.net/inazuma/images/5/52/Escudo_-_Royal_Academy_%28SD%29.png/revision/latest?cb=20231225133321&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Kirkwood', 'Japón', 'https://static.wikia.nocookie.net/inazuma/images/4/40/Escudo_-_Kirkwood_%28SD%29.png/revision/latest?cb=20240117213804&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Genesis', 'Japón', 'https://static.wikia.nocookie.net/inazuma/images/9/93/Escudo_G%C3%A9nesis_%28IE_HVR%29.png/revision/latest?cb=20240401112105&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('The Kingdom', 'Brasil', 'https://static.wikia.nocookie.net/inazuma/images/0/0c/Escudo_-_Os_Reis_%28SD%29.png/revision/latest?cb=20240918154716&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Little Gigant', 'África', 'https://static.wikia.nocookie.net/inazuma/images/d/d1/Logo_peque%C3%B1os_gigantes.png/revision/latest?cb=20110617155403&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Orpheus', 'Italia', 'https://static.wikia.nocookie.net/inazuma/images/8/8a/Escudo_-_Orfeo_%28SD%29.png/revision/latest?cb=20240906212620&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Unicorn', 'Estados Unidos', 'https://static.wikia.nocookie.net/inazuma/images/1/1b/Unicorn_Emblema.png/revision/latest?cb=20240906134136&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Fire Dragon', 'Corea', 'https://static.wikia.nocookie.net/inazuma/images/8/87/Escudo_-_Dragones_de_Fuego_%28Strikers%29.png/revision/latest?cb=20240815214436&path-prefix=es');
-INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO) VALUES ('Desert Lion', 'Qatar', 'https://static.wikia.nocookie.net/inazuma/images/d/d9/Leones_del_Desierto_Emblema.png/revision/latest?cb=20240906141235&path-prefix=es');
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO, ID_CAPITAN, ID_ENTRENADOR) VALUES ('Raimon', 'Japón', 'https://static.wikia.nocookie.net/inazuma/images/e/e1/Raimon_FF_Emblema.png/revision/latest?cb=20210620190405&path-prefix=es', 1, 2);
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO, ID_CAPITAN, ID_ENTRENADOR) VALUES ('Zeus', 'Grecia', 'https://static.wikia.nocookie.net/inazuma/images/f/ff/Escudo_Zeus_FF.png/revision/latest?cb=20210620190427&path-prefix=es', 2, 4);
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO, ID_CAPITAN, ID_ENTRENADOR) VALUES ('Royal Academy', 'Japón', 'https://static.wikia.nocookie.net/inazuma/images/5/52/Escudo_-_Royal_Academy_%28SD%29.png/revision/latest?cb=20231225133321&path-prefix=es', 3, 6);
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO, ID_CAPITAN, ID_ENTRENADOR) VALUES ('Kirkwood', 'Japón', 'NULL', 4, 1);
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO, ID_CAPITAN, ID_ENTRENADOR) VALUES ('Genesis', 'Japón', 'https://static.wikia.nocookie.net/inazuma/images/9/93/Escudo_G%C3%A9nesis_%28IE_HVR%29.png/revision/latest?cb=20240401112105&path-prefix=es', 5, 3);
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO, ID_CAPITAN, ID_ENTRENADOR) VALUES ('The Kingdom', 'Brasil', 'https://static.wikia.nocookie.net/inazuma/images/0/0c/Escudo_-_Os_Reis_%28SD%29.png/revision/latest?cb=20240918154716&path-prefix=es', 6, 5);
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO, ID_CAPITAN, ID_ENTRENADOR) VALUES ('Little Gigant', 'África', 'https://static.wikia.nocookie.net/inazuma/images/d/d1/Logo_peque%C3%B1os_gigantes.png/revision/latest?cb=20110617155403&path-prefix=es', 5, 2);
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO, ID_CAPITAN, ID_ENTRENADOR)VALUES ('Orpheus', 'Italia', 'https://static.wikia.nocookie.net/inazuma/images/8/8a/Escudo_-_Orfeo_%28SD%29.png/revision/latest?cb=20240906212620&path-prefix=es', 4, 4);
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO, ID_CAPITAN, ID_ENTRENADOR) VALUES ('Unicorn', 'Estados Unidos', 'https://static.wikia.nocookie.net/inazuma/images/1/1b/Unicorn_Emblema.png/revision/latest?cb=20240906134136&path-prefix=es', 3, 6);
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO, ID_CAPITAN, ID_ENTRENADOR) VALUES ('Fire Dragon', 'Corea', 'https://static.wikia.nocookie.net/inazuma/images/8/87/Escudo_-_Dragones_de_Fuego_%28Strikers%29.png/revision/latest?cb=20240815214436&path-prefix=es', 2, 1);
+INSERT INTO EQUIPO (NOMBRE, REGION, ESCUDO, ID_CAPITAN, ID_ENTRENADOR) VALUES ('Desert Lion', 'Qatar', 'NULL', 1, 3);
 
 INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUES ('Tornado de Fuego', 0, 'Alta', 'Disparo', 1);
 INSERT INTO SUPERTECNICA (NOMBRE, COORDINADA, POTENCIA, TIPO, ID_ATRIBUTO) VALUES ('Corte del Viento', 0, 'Media', 'Disparo', 2);
@@ -121,6 +121,7 @@ INSERT INTO USUARIO (NOMBRE,CONTRASENHA) VALUES ('admin','abc123.');
 INSERT INTO USUARIO (NOMBRE,CONTRASENHA) VALUES ('invitado','abc123.');
 
 SET FOREIGN_KEY_CHECKS=1;
+
 
 
 
