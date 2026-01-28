@@ -15,6 +15,7 @@ public class Usuario implements Serializable {
     private int id;
     private String name;
     private String passwd;
+    
 
     public Usuario(int id, String usuario, String contraseña) {
         this.id = id;

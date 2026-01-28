@@ -118,10 +118,7 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guestButtonActionPerformed
-        loginButton.setVisible(false);
-        registerButton.setVisible(false);
-        guestButton.setVisible(false);
-        menuBar.setVisible(true);
+
     }//GEN-LAST:event_guestButtonActionPerformed
 
     public void setPersonajesTableMenuItemActionListener(ActionListener al){
@@ -153,6 +150,17 @@ public class MainFrame extends javax.swing.JFrame {
         registerButton.setVisible(false);
         guestButton.setVisible(false);
         menuBar.setVisible(true);
+    }
+    
+    public void enableDisableBotonesLogin(boolean enableDisable){
+        loginButton.setVisible(enableDisable);
+        registerButton.setVisible(enableDisable);
+        guestButton.setVisible(enableDisable);
+        menuBar.setVisible(true);
+    }
+    
+    public void invitadoActionListener(ActionListener al){
+        this.guestButton.addActionListener(al);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

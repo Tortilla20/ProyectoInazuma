@@ -47,6 +47,7 @@ public class LoginController {
                     if(rs.next()) {
                         int id = rs.getInt("ID");
                         Usuario usuario = new Usuario(id, username, passwd);
+                        OperacionBD.actualizarUsuarioActual(usuario);
                         CurrentUser.setCurrentUser(usuario);
                         
                         mainFrame.updateForLogin();

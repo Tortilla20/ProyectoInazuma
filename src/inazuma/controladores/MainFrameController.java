@@ -1,7 +1,9 @@
 package inazuma.controladores;
 
+import inazuma.OperacionBD;
 import inazuma.controladores.userController.LoginController;
 import inazuma.controladores.userController.RegisterController;
+import inazuma.modelo.Usuario;
 import inazuma.vistas.users.MainFrame;
 import inazuma.vistas.PersonajesTableDialog;
 import inazuma.vistas.users.LoginDialog;
@@ -12,6 +14,7 @@ import java.awt.event.ActionListener;
 public class MainFrameController {
     
     private final MainFrame view;
+    
 
     public MainFrameController(MainFrame view) {
         this.view = view;
@@ -19,6 +22,7 @@ public class MainFrameController {
         this.view.setEquiposTableMenuItemActionListener(this.getEquiposTableMenuItemActionListener());
         this.view.addRegisterButtonActionListener(this.getRegisterButtonListener());
         this.view.addLoginButtonActionListener(this.getLoginButtonListener());
+        this.view.invitadoActionListener(this.getInvitadoActionListener());
         //TODO otros menuItems
     }
     
@@ -65,6 +69,15 @@ public class MainFrameController {
                 LoginDialog ld  = new LoginDialog(view, true);
                 LoginController lc = new LoginController(ld, view);
                 ld.setVisible(true);
+            }
+        };
+        return al;
+    }
+    private ActionListener getInvitadoActionListener(){
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {           
+                view.enableDisableBotonesLogin(false);
             }
         };
         return al;

@@ -24,6 +24,7 @@ public class OperacionBD {
 
     private static Connection conexion;
     private static List<Atributo> listaAtributos;
+    private static Usuario usuarioActual = new Usuario(2,"invitado","abc123.");
     //private static int invitado;
     private static int admin;
 
@@ -56,19 +57,19 @@ public class OperacionBD {
     public static List<Personaje> getPersonajes(String busqueda, String genero, String posicion, String atributoEntrante) {
         //Añadido usuarioActual por IVAN
         List<Personaje> listaPersonajes = new ArrayList<>();
-        
-        Usuario usuarioActual = CurrentUser.getCurrentUser();
+
+        //Usuario usuarioActual = CurrentUser.getCurrentUser();
         if (usuarioActual == null) {
             //return listaPersonajes;
-            
+
             //invitado con id -1 en el cual no existe en la BD, nombre invitado, sin contrasenha
-            usuarioActual = new Usuario(-1, "invitado", "");
-            
+            //usuarioActual = new Usuario(-1, "invitado", "");
+
             //por si se quiere meter un usuario invitado en el SQL
             //usuarioActual = new Usuario(1, "invitado", "abc123.");
         }
-        
-        String consultaSQL = "SELECT * FROM personaje WHERE Nombre LIKE '%"+busqueda+"%' ";
+
+        String consultaSQL = "SELECT * FROM personaje WHERE Nombre LIKE '%" + busqueda + "%' ";
         StringBuilder sb = new StringBuilder();
         sb.append(consultaSQL);
 
@@ -77,7 +78,7 @@ public class OperacionBD {
             if (usuarioActual.getId() == admin) {
 
             } else {
-                //sb.append("AND ID_USUARIO = " + usuarioActual.getId() + " ");
+                sb.append("AND ID_USUARIO = " + usuarioActual.getId() + " ");
 
             }
             if (!genero.isBlank() || !genero.isEmpty()) {
@@ -122,7 +123,7 @@ public class OperacionBD {
 
     private static Personaje crearPersonajeModelo(ResultSet rs, Atributo atributo) throws SQLException {
         //Añadido usuarioActual por IVAN
-        Usuario usuarioActual = CurrentUser.getCurrentUser();
+        //Usuario usuarioActual = CurrentUser.getCurrentUser();
         Personaje p = new Personaje(rs.getInt(1), rs.getString(2), atributo, usuarioActual);
         p.setAlias(rs.getString(3));
         p.setDescription(rs.getString(4));
@@ -138,15 +139,15 @@ public class OperacionBD {
         p.setAtributo(atributo);
         return p;
     }
-    
-    public static Personaje getPersonaje(int id){
+
+    public static Personaje getPersonaje(int id) {
         Personaje personaje = null;
         try {
             String sentencia = "SELECT * FROM personaje WHERE id = " + id;
             Statement st = conexion.createStatement();
             ResultSet rs = st.executeQuery(sentencia);
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 Atributo atributo = null;
                 personaje = crearPersonajeModelo(rs, atributo);
             }
@@ -155,7 +156,7 @@ public class OperacionBD {
         }
         return personaje;
     }
-    
+
     public static void addPersonaje(Personaje personaje) {
         String sentencia = "INSERT INTO personaje (nombre,alias,descripcion,posicion,id_atributo,genero) VALUES (?,?,?,?,?,?)";
 
@@ -175,8 +176,6 @@ public class OperacionBD {
         }
     }
 
-    
-    
     public static void addSupertecnica(Supertecnica supertecnica) {
 
         try {
@@ -319,12 +318,12 @@ public class OperacionBD {
 
     }
 
-    /**COMENTADO POR IVAN
-     * public static void actualizarUsuarioActual(Usuario usuario) {
+    //COMENTADO POR IVAN
+    public static void actualizarUsuarioActual(Usuario usuario) {
         usuarioActual = usuario;
-    }**/
+    }
 
-    private static void getUsuarios() {
+    private static void getUsuariosYAdmin() {
         List<Usuario> listaUsuarios = new ArrayList<>();
         try {
             String sentencia = "SELECT * FROM usuario";
@@ -338,6 +337,23 @@ public class OperacionBD {
         } catch (SQLException ex) {
             System.out.println("Error en getUsuarioInvitado()");
         }
+    }
+    
+    public static List<Usuario> getUsuarios() {
+        List<Usuario> listaUsuarios = new ArrayList<>();
+        try {
+            String sentencia = "SELECT * FROM usuario";
+            Statement st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sentencia);
+            while (rs.next()) {
+                listaUsuarios.add(new Usuario(rs.getInt(1), rs.getString(2), rs.getString(3)));
+            }
+            
+
+        } catch (SQLException ex) {
+            System.out.println("Error en getUsuarios()");
+        }
+        return listaUsuarios;
     }
 
     private static void getInvitadoYAdmin(List<Usuario> listaUsuarios) {
@@ -383,5 +399,7 @@ public class OperacionBD {
         }
 
     }
+
+    
 
 }
