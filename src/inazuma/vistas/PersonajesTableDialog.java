@@ -65,7 +65,6 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
 
         aplicarButton.setText("Aplicar");
 
-        jugadoresTable.setAutoCreateRowSorter(true);
         jugadoresTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -73,7 +72,15 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
             new String [] {
                 "Icono", "Nombre", "Genero", "Posicion", "Atributo"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jugadoresTable.setRowHeight(80);
         tablaJugadoresScrollPane.setViewportView(jugadoresTable);
 
@@ -143,6 +150,18 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setModificarButtonActionListener( ActionListener al){
+        modificarButton.addActionListener(al);
+    }
+    
+    public void setAnhadirButtonActionListener(ActionListener al){
+        anhadirButton.addActionListener(al);
+    }
+    
+    public void setBorrarButtonActionListener(ActionListener al){
+        borrarButton.addActionListener(al);
+    }
+    
     public void setAplicarButtonActionListener(ActionListener al){
         aplicarButton.addActionListener(al);
     }
@@ -194,6 +213,10 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
         jugadoresTable.clearSelection();
         jugadoresTable.revalidate();
         jugadoresTable.repaint();
+    }
+    
+    public void desactivarSeleccion() {
+        jugadoresTable.clearSelection();
     }
     
     private void addTableRenderer() {

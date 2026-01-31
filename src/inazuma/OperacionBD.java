@@ -46,6 +46,57 @@ public class OperacionBD {
 
     }
 
+    public static Usuario getUsuarioActual() {
+        return usuarioActual;
+    }
+
+    public static void borrarPersonaje(int idPersonaje){
+
+        try {
+            String sentencia = "DELETE FROM personaje WHERE id = ?";
+            PreparedStatement ps = conexion.prepareStatement(sentencia);
+            ps.setInt(1, idPersonaje);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+
+    }
+    
+    public static Atributo getAtributo (String nombre){
+        Atributo atributo = null;
+        for(Atributo a : listaAtributos){
+            if(a.getNombre().equals(nombre)){
+                atributo = a;
+            }
+        }
+        return atributo;
+    }
+    
+    public static void addPersonaje(String icono, String nombre, String alias, String genero, String posicion, String atributo, String descripcion){
+        String sentencia = "INSERT INTO personaje (nombre,alias,descripcion,posicion,id_atributo,genero,id_usuario) VALUES (?,?,?,?,?,?,?)";
+        Atributo atrib = null;
+        for(Atributo a : listaAtributos){
+            if(a.getNombre().equals(atributo)){
+                atrib = a;
+            }
+        }
+        try {
+            PreparedStatement ps = conexion.prepareStatement(sentencia);
+            ps.setString(1, nombre);
+            ps.setString(2,alias);
+            ps.setString(3, descripcion);
+            ps.setString(4, posicion);
+            ps.setInt(5, atrib.getId());
+            ps.setString(6, genero);
+            ps.setInt(7, usuarioActual.getId());
+            ps.execute();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(OperacionBD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public static void cerrarConexion() {
         try {
             conexion.close();
@@ -163,7 +214,7 @@ public class OperacionBD {
             PreparedStatement ps = conexion.prepareStatement(sentencia);
             ps.setString(1, supertecnica.getNombre());
             ps.setBoolean(2, supertecnica.isCoordinada());
-            ps.setInt(3, supertecnica.getPotencia());
+            ps.setString(3, supertecnica.getPotencia());
             ps.setString(4, supertecnica.getTipo());
             ps.setInt(5, supertecnica.getAtributo().getId());
         } catch (SQLException ex) {
@@ -232,7 +283,7 @@ public class OperacionBD {
     public static void modifyPersonaje(Personaje personaje) {
 
         String sentencia = "UPDATE personaje "
-                + "SET description = ?, posicion = ?, atributo = ?, genero = ?, imagen = ? "
+                + "SET descripcion = ?, posicion = ?, id_atributo = ?, genero = ?, imagen = ? "
                 + "WHERE id = ? AND nombre = ?";
 
         try {
@@ -244,12 +295,64 @@ public class OperacionBD {
             ps.setString(5, personaje.getImage());
             ps.setInt(6, personaje.getId());
             ps.setString(7, personaje.getNombre());
-            ps.execute();
+            ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(OperacionBD.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+    public static void borrarTieneSupertecnicaPersonaje(int idPersonaje, int idSupertecnica){
+        try {
+            String sentencia = "DELETE FROM tiene WHERE ID_PERSONAJE = ? AND ID_SUPERTECNICA = ?";
+            PreparedStatement ps = conexion.prepareStatement(sentencia);
+            ps.setInt(1, idPersonaje);
+            ps.setInt(2, idSupertecnica);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+    }
+    
+    public static void insertarTieneSupertecnicaPersonaje(int idPersonaje, int idSupertecnica){
+
+        try {
+            String sentencia = "INSERT INTO tiene VALUES(?,?)";
+            PreparedStatement ps = conexion.prepareStatement(sentencia);
+            ps.setInt(1, idPersonaje);
+            ps.setInt(2, idSupertecnica);
+            ps.executeUpdate();
+
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+
+    }
+    
+    public static void borrarJuegaEquipo(int idPersonaje, int idEquipo){
+
+        try {
+            String sentencia = "DELETE FROM juega WHERE id_Personaje = ? AND id_Equipo = ?";
+            PreparedStatement ps = conexion.prepareStatement(sentencia);
+            ps.setInt(1, idPersonaje);
+            ps.setInt(2, idEquipo);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+    }
+    
+    public static void insertJuegaEquipo(int personaje, int equipo){
+        try {
+            String sentencia = "INSERT INTO juega VALUES (?,?)";
+            PreparedStatement ps = conexion.prepareStatement(sentencia);
+            ps.setInt(1, personaje);
+            ps.setInt(2, equipo);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+    }
+    
     private static void getAllAtributos() {
 
         listaAtributos = new ArrayList<>();
@@ -275,19 +378,19 @@ public class OperacionBD {
         List<Supertecnica> listaSupertecnica = new ArrayList<>();
         try {
 
-            String sentencia = "SELECT * FROM supertecnica";
+            String sentencia = "SELECT supertecnica.ID, supertecnica.NOMBRE, supertecnica.COORDINADA, supertecnica.POTENCIA, supertecnica.TIPO, supertecnica.ID_ATRIBUTO FROM supertecnica ;";
             Statement st = conexion.createStatement();
             ResultSet rs = st.executeQuery(sentencia);
 
             while (rs.next()) {
                 Atributo atributo = null;
-                int id_atributo = rs.getInt(5);
+                int id_atributo = rs.getInt(6);
                 for (Atributo a : listaAtributos) {
                     if (a.getId() == id_atributo) {
                         atributo = a;
                     }
                 }
-                listaSupertecnica.add(new Supertecnica(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getBoolean(4), atributo, rs.getString(6)));
+                listaSupertecnica.add(new Supertecnica(rs.getInt(1),rs.getString(2),rs.getString(4),rs.getBoolean(3),atributo,rs.getString(5)));
             }
 
             return listaSupertecnica;
@@ -297,7 +400,7 @@ public class OperacionBD {
         return listaSupertecnica;
 
     }
-
+    
     public static void actualizarUsuarioActual(Usuario usuario) {
         usuarioActual = usuario;
     }
@@ -378,15 +481,13 @@ public class OperacionBD {
 
     }
 
-    public static List<Equipo> getEquiposDePersonaje(Personaje personaje) {
+    public static List<Equipo> getEquiposDePersonaje(Personaje personaje){
         List<Equipo> listaEquipos = new ArrayList<>();
-        String sentencia = "SELECT Equipo.id, Equipo,nombre, Equipo.region, Equipo.escudo,Equipo.id_capitan, Equipo.id_entrenador "
-                + "FROM personaje JOIN juega ON id.personaje JOIN equipo ON Equipo.id.equipo "
-                + "WHERE juega.id_personaje = '" + personaje.getId() + "';";
-        try {
+        String sentencia = "SELECT Equipo.id, Equipo.nombre, Equipo.region, Equipo.escudo, Equipo.id_capitan, Equipo.id_entrenador FROM personaje JOIN juega ON juega.ID_PERSONAJE = personaje.ID JOIN equipo ON Equipo.id = juega.ID_EQUIPO WHERE juega.id_personaje = "+String.valueOf(personaje.getId())+";";
+        try { 
             Statement st = conexion.createStatement();
             ResultSet rs = st.executeQuery(sentencia);
-            while (rs.next()) {
+            while(rs.next()){
                 crearEquipo(rs, listaEquipos);
             }
         } catch (SQLException ex) {
@@ -396,6 +497,32 @@ public class OperacionBD {
         return listaEquipos;
     }
 
+    public static List<Supertecnica> getSupertecnicasPersonaje(int idPersonaje){
+        List<Supertecnica> listaSupertecnicas = new ArrayList<>();
+        try {
+
+            String sentencia = "SELECT supertecnica.id, supertecnica.nombre, supertecnica.coordinada, supertecnica.potencia, supertecnica.tipo, supertecnica.id_atributo FROM supertecnica JOIN tiene ON supertecnica.id = tiene.id_supertecnica WHERE tiene.id_Personaje = ?";
+            PreparedStatement ps = conexion.prepareStatement(sentencia);
+            ps.setInt(1, idPersonaje);
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                Atributo atributo = null;
+                for(Atributo a : listaAtributos){
+                    if(a.getId() == rs.getInt(6)){
+                        atributo = a;
+                    }
+                }
+
+                listaSupertecnicas.add(new Supertecnica(rs.getInt(1),rs.getString(2),rs.getString(4),rs.getBoolean(3),atributo,rs.getString(5)));
+            }
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        return listaSupertecnicas;
+
+    }
+    
     private static void crearEquipo(ResultSet rs, List<Equipo> listaEquipos) throws SQLException {
         Personaje capitan = getPersonaje(rs.getInt(5));
         Personaje entrenador = getPersonaje(rs.getInt(6));
@@ -454,4 +581,24 @@ public class OperacionBD {
 
     }
 
+    public static List<Equipo> getListaEquipos(){
+        String sentencia = "SELECT * FROM equipo;";
+        List<Equipo> listaEquipo = new ArrayList<>();
+        try {
+
+            Statement st = conexion.createStatement();
+            ResultSet rs = st.executeQuery(sentencia);
+
+            while(rs.next()){
+                crearEquipo(rs, listaEquipo);
+            }
+        } catch (SQLException ex) {
+            System.getLogger(OperacionBD.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        //for (Equipo e : listaEquipo) {
+        //    System.out.println(e.getNombre());
+        //}
+        return listaEquipo;
+    }
+    
 }

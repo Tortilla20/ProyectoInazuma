@@ -14,12 +14,11 @@ import java.awt.event.ActionListener;
 public class MainFrameController {
     
     private final MainFrame view;
-    
 
     public MainFrameController(MainFrame view) {
         this.view = view;
         this.view.setPersonajesTableMenuItemActionListener(this.getPersonajesTableMenuItemActionListener());
-        this.view.setEquiposTableMenuItemActionListener(this.getEquiposTableMenuItemActionListener());
+        
         this.view.addRegisterButtonActionListener(this.getRegisterButtonListener());
         this.view.addLoginButtonActionListener(this.getLoginButtonListener());
         this.view.invitadoActionListener(this.getInvitadoActionListener());

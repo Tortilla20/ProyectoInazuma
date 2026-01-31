@@ -1,11 +1,19 @@
 package inazuma.vistas;
 
+import java.awt.Component;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Vector;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.UIManager;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -20,12 +28,14 @@ public class PersonajeDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setTitle("Jugador");
+        addTableRenderer();
     }
 
     public PersonajeDialog(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
         this.setTitle("Jugador");
+        addTableRenderer();
     }
 
     /**
@@ -66,6 +76,7 @@ public class PersonajeDialog extends javax.swing.JDialog {
         supertecnicasComboBox = new javax.swing.JComboBox<>();
         iconoTextLabelLabel = new javax.swing.JLabel();
         iconoTextField = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -86,11 +97,19 @@ public class PersonajeDialog extends javax.swing.JDialog {
             Class[] types = new Class [] {
                 java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class, java.lang.Object.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
+        supertecnicasTable.setRowHeight(80);
         supertecnicasTableScrollPane.setViewportView(supertecnicasTable);
 
         equiposLabel.setText("Equipos:");
@@ -102,7 +121,16 @@ public class PersonajeDialog extends javax.swing.JDialog {
             new String [] {
                 "Escudo", "Nombre", "Región", "Capitan", "Entrenador"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        equiposTable.setRowHeight(80);
         equiposTableScrollPane.setViewportView(equiposTable);
 
         generoLabel.setText("Genero:");
@@ -145,6 +173,8 @@ public class PersonajeDialog extends javax.swing.JDialog {
 
         iconoTextField.setText("");
 
+        jLabel1.setText("");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -179,6 +209,8 @@ public class PersonajeDialog extends javax.swing.JDialog {
                     .addComponent(equiposTableScrollPane)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(confirmarButton))
                     .addComponent(descripcionTextAreaScrollPane)
                     .addGroup(layout.createSequentialGroup()
@@ -255,7 +287,9 @@ public class PersonajeDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(equiposTableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(confirmarButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(confirmarButton)
+                    .addComponent(jLabel1))
                 .addContainerGap())
         );
 
@@ -269,9 +303,247 @@ public class PersonajeDialog extends javax.swing.JDialog {
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {generoComboBox, generoLabel});
 
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {confirmarButton, jLabel1});
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public String getGenero(){
+        return this.generoComboBox.getSelectedItem().toString();
+    }
+    
+    public String getPosicion(){
+        return this.posicionComboBox.getSelectedItem().toString();
+    }
+    
+    public String getAtributo(){
+        return this.atributoComboBox.getSelectedItem().toString();
+    }
+    
+    private void addTableRenderer() {
+        equiposTable.getColumnModel().getColumn(0).setCellRenderer(new TableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                JLabel label = new JLabel();
+                label.setHorizontalAlignment(JLabel.CENTER);
+                if (value instanceof ImageIcon) {
+                    label.setIcon((ImageIcon) value);
+                    label.setText("");
+                } else {
+                    label.setIcon(null);
+                    label.setText(value != null ? value.toString() : "");
+                }
+                label.setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
+                if (hasFocus) {
+                    label.setBorder(UIManager.getBorder("Table.focusCellHighlightBorder"));
+                } else {
+                    label.setBorder(null);
+                }
+                return label;
+            }
+        });
+        supertecnicasTable.getColumnModel().getColumn(4).setCellRenderer(new TableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                JLabel label = new JLabel();
+                label.setHorizontalAlignment(JLabel.CENTER);
+                if (value instanceof ImageIcon) {
+                    label.setIcon((ImageIcon) value);
+                    label.setText("");
+                } else {
+                    label.setIcon(null);
+                    label.setText(value != null ? value.toString() : "");
+                }
+                label.setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
+                if (hasFocus) {
+                    label.setBorder(UIManager.getBorder("Table.focusCellHighlightBorder"));
+                } else {
+                    label.setBorder(null);
+                }
+                return label;
+            }
+        });
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        equiposTable.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
+        equiposTable.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
+        equiposTable.getColumnModel().getColumn(3).setCellRenderer(new TableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                JLabel label = new JLabel();
+                label.setHorizontalAlignment(JLabel.CENTER);
+                if (value instanceof ImageIcon) {
+                    label.setIcon((ImageIcon) value);
+                    label.setText("");
+                } else {
+                    label.setIcon(null);
+                    label.setText(value != null ? value.toString() : "");
+                }
+                label.setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
+                if (hasFocus) {
+                    label.setBorder(UIManager.getBorder("Table.focusCellHighlightBorder"));
+                } else {
+                    label.setBorder(null);
+                }
+                return label;
+            }
+        });
+        equiposTable.getColumnModel().getColumn(4).setCellRenderer(new TableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                JLabel label = new JLabel();
+                label.setHorizontalAlignment(JLabel.CENTER);
+                if (value instanceof ImageIcon) {
+                    label.setIcon((ImageIcon) value);
+                    label.setText("");
+                } else {
+                    label.setIcon(null);
+                    label.setText(value != null ? value.toString() : "");
+                }
+                label.setBackground(isSelected ? table.getSelectionBackground() : table.getBackground());
+                if (hasFocus) {
+                    label.setBorder(UIManager.getBorder("Table.focusCellHighlightBorder"));
+                } else {
+                    label.setBorder(null);
+                }
+                return label;
+            }
+        });
+        supertecnicasTable.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+        supertecnicasTable.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
+        supertecnicasTable.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
+        //supertecnicasTable.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
+    }
+    
+    public void modoAgregar(){
+        boolean desactivado = false;
+        supertecnicasComboBox.setEditable(desactivado);
+        supertecnicasComboBox.setVisible(desactivado);
+        equiposComboBox.setEditable(desactivado);
+        equiposComboBox.setVisible(desactivado);
+        anhadirSupertecnicaButton.setVisible(desactivado);
+        anhadirSupertecnicaButton.setEnabled(desactivado);
+        anhadirEquipoButton.setEnabled(desactivado);
+        anhadirEquipoButton.setVisible(desactivado);
+        eliminarSupertecnicaButton.setVisible(desactivado);
+        eliminarSupertecnicaButton.setEnabled(desactivado);
+        eliminarEquipoButton.setVisible(desactivado);
+        eliminarEquipoButton.setEnabled(desactivado);
+        supertecnicasTable.setVisible(desactivado);
+        supertecnicasTable.setEnabled(desactivado);
+        equiposTable.setVisible(desactivado);
+        equiposTable.setEnabled(desactivado);
+        supertecnicasTableScrollPane.setVisible(desactivado);
+        equiposTableScrollPane.setVisible(desactivado);
+        supertecnicasLabel.setVisible(desactivado);
+        equiposLabel.setVisible(desactivado);
+        this.pack();
+        boolean activo = true;
+        nombreTextField.setEditable(activo);
+        aliasTextField.setEditable(activo);
+        generoComboBox.setEditable(activo);
+        posicionComboBox.setEditable(activo);
+        atributoComboBox.setEditable(activo);
+        iconoTextField.setEditable(activo);
+        descripcionTextArea.setEditable(activo);
+        confirmarButton.setVisible(activo);
+        confirmarButton.setEnabled(activo);
+    }
+    
+    public void activarFields(boolean activo){
+        nombreTextField.setEditable(activo);
+        aliasTextField.setEditable(activo);
+        generoComboBox.setEnabled(activo);
+        posicionComboBox.setEnabled(activo);
+        atributoComboBox.setEnabled(activo);
+        iconoTextField.setEditable(activo);
+        descripcionTextArea.setEditable(activo);
+        supertecnicasComboBox.setEditable(activo);
+        supertecnicasComboBox.setVisible(activo);
+        equiposComboBox.setEditable(activo);
+        equiposComboBox.setVisible(activo);
+        anhadirSupertecnicaButton.setVisible(activo);
+        anhadirSupertecnicaButton.setEnabled(activo);
+        anhadirEquipoButton.setEnabled(activo);
+        anhadirEquipoButton.setVisible(activo);
+        eliminarSupertecnicaButton.setVisible(activo);
+        eliminarSupertecnicaButton.setEnabled(activo);
+        eliminarEquipoButton.setVisible(activo);
+        eliminarEquipoButton.setEnabled(activo);
+        confirmarButton.setVisible(activo);
+        confirmarButton.setEnabled(activo);
+    }
+    
+    public void addRowEquiposTable(Vector row){
+        DefaultTableModel dtm = (DefaultTableModel) this.equiposTable.getModel();
+        dtm.addRow(row);
+    }
+    
+    public void addRowSupertecnicasTable(Vector row){
+        DefaultTableModel dtm = (DefaultTableModel) this.supertecnicasTable.getModel();
+        dtm.addRow(row);
+    }
+    
+    public void clearSupertecnicasTable() {
+        DefaultTableModel dtm = (DefaultTableModel) this.supertecnicasTable.getModel();
+        dtm.setRowCount(0);
+        supertecnicasTable.clearSelection();
+        supertecnicasTable.revalidate();
+        supertecnicasTable.repaint();
+    }
+    
+    public int getEquiposTableSelectedRow() {
+        return equiposTable.getSelectedRow();
+    }
+    
+    public int getSupertecnicasTableSelectedRow() {
+        return supertecnicasTable.getSelectedRow();
+    }
+    
+    public void clearEquiposTable() {
+        DefaultTableModel dtm = (DefaultTableModel) this.equiposTable.getModel();
+        dtm.setRowCount(0);
+        equiposTable.clearSelection();
+        equiposTable.revalidate();
+        equiposTable.repaint();
+    }
+    
+    public void setConfirmarButtonActionListener(ActionListener al){
+        confirmarButton.addActionListener(al);
+    }
+    
+    public void setAnhadirSupertecnicaButtonActionListener(ActionListener al){
+        anhadirSupertecnicaButton.addActionListener(al);
+    }
+    
+    public void setEliminarSupertecnicaButtonActionListener(ActionListener al){
+        eliminarSupertecnicaButton.addActionListener(al);
+    }
+    
+    public void setAnhadirEquipoButtonActionListener(ActionListener al){
+        anhadirEquipoButton.addActionListener(al);
+    }
+    
+    public void setEliminarEquipoButtonActionListener(ActionListener al){
+        eliminarEquipoButton.addActionListener(al);
+    }
+    
+    public void setEquipoComboBoxContent(String equipo) {
+        equiposComboBox.addItem(equipo);
+    }
+    
+    public void setSupertecnicaComboBoxContent(String supertecnica) {
+        supertecnicasComboBox.addItem(supertecnica);
+    }
+    
+    public String getEquipoComboBoxSelected() {
+        return equiposComboBox.getSelectedItem().toString();
+    }
+    
+    public String getSupertecnicaComboBoxSelected() {
+        return supertecnicasComboBox.getSelectedItem().toString();
+    }
+    
     public void setIconoLabel(ImageIcon imagen) {
         iconoLabel.setIcon(imagen);
     }
@@ -284,6 +556,14 @@ public class PersonajeDialog extends javax.swing.JDialog {
 
     public String getNombreTextField() {
         return nombreTextField.getText();
+    }
+    
+    public void setIconoTextField(String text) {
+        iconoTextField.setText(text);
+    }
+    
+    public String getIconoTextField() {
+        return iconoTextField.getText();
     }
     
     public void setAliasTextField(String text) {
@@ -326,6 +606,8 @@ public class PersonajeDialog extends javax.swing.JDialog {
         }
     }
 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aliasLabel;
     private javax.swing.JTextField aliasTextField;
@@ -348,6 +630,7 @@ public class PersonajeDialog extends javax.swing.JDialog {
     private javax.swing.JLabel iconoLabel;
     private javax.swing.JTextField iconoTextField;
     private javax.swing.JLabel iconoTextLabelLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JTextField nombreTextField;
     private javax.swing.JComboBox<String> posicionComboBox;

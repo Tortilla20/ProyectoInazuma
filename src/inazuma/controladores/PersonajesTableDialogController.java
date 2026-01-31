@@ -29,15 +29,19 @@ import javax.swing.JOptionPane;
 public class PersonajesTableDialogController {
 
     private final PersonajesTableDialog view;
-
+    private PersonajesTableDialogController esto = this;
+    
     public PersonajesTableDialogController(PersonajesTableDialog view) {
         this.view = view;
         this.view.setAplicarButtonActionListener(this.getAplicarButtonActionListener());
         this.view.setMostrarButtonActionListener(this.getMostrarButtonActionListener());
+        this.view.setAnhadirButtonActionListener(this.getAnhadirButtonActionListener());
+        this.view.setModificarButtonActionListener(this.getModificarButtonActionListener());
+        this.view.setBorrarButtonActionListener(this.getBorrarButtonActionListener());
         cargarDatos();
     }
     
-    private void cargarDatos(){
+    public void cargarDatos(){
         
         //System.out.println(OperacionBD.getListaAtributos());
         view.clearJugadoresTable();
@@ -53,13 +57,6 @@ public class PersonajesTableDialogController {
                 row.add(getImageIcon(p.getAtributo().getImagen()));
                 view.addRowJugadoresTable(row);
             }
-            //Vector row = new Vector();
-            //row.add(getImageIcon("https://cdnb.artstation.com/p/assets/images/images/057/627/223/large/daniel-lopez-mark-camera-5.jpg"));
-            //row.add("Mark Evans");
-            //row.add("Hombre");
-            //row.add("GK");
-            //row.add(getImageIcon("https://static.wikia.nocookie.net/inazuma-eleven/images/6/61/Fire_icon_%28VR%29.png"));
-            //view.addRowJugadoresTable(row);
         } catch (URISyntaxException ex) {
             java.util.logging.Logger.getLogger(PersonajesTableDialogController.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (MalformedURLException ex) {
@@ -67,8 +64,6 @@ public class PersonajesTableDialogController {
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(PersonajesTableDialogController.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
-    
     }
     
     public int getSelectedPlayerID(int row){
@@ -77,7 +72,7 @@ public class PersonajesTableDialogController {
     }
     
     private ImageIcon getImageIcon(String enlace) throws URISyntaxException, MalformedURLException, IOException{
-        if (enlace.equals(null)){
+        if (null==enlace){
             return new ImageIcon();
         }
             URL url = (new URI(enlace).toURL());
@@ -104,15 +99,67 @@ public class PersonajesTableDialogController {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
                 if (view.getJugadoresTableSelectedItem()!=-1) {
                     PersonajeDialog newView = new PersonajeDialog(view,true);
-                    PersonajeDialogController newController = new PersonajeDialogController(newView,getSelectedPlayerID(view.getJugadoresTableSelectedItem()));
+                    PersonajeDialogController newController = new PersonajeDialogController(newView,getSelectedPlayerID(view.getJugadoresTableSelectedItem()),false,esto);
                     newView.setVisible(true);
+                    
                 } else {
                     JOptionPane.showMessageDialog(view, "Porfavor selecciona un personaje en la tabla");
                 }
                 
+            }
+        };
+                return al;
+    }
+    
+    private ActionListener getModificarButtonActionListener() {
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (view.getJugadoresTableSelectedItem()!=-1) {
+                    PersonajeDialog newView = new PersonajeDialog(view,true);
+                    PersonajeDialogController newController = new PersonajeDialogController(newView,getSelectedPlayerID(view.getJugadoresTableSelectedItem()),true,esto);
+                    newView.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(view, "Porfavor selecciona un personaje en la tabla");
+                }
+            }
+        };
+                return al;
+    }
+    
+    private ActionListener getAnhadirButtonActionListener(){
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                    desactivarSeleccion();
+                    PersonajeDialog newView = new PersonajeDialog(view,true);
+                    PersonajeDialogController newController = new PersonajeDialogController(newView,-1,true,esto);
+                    newView.setVisible(true);
+            }
+        };
+                return al;
+    }
+    
+    private void desactivarSeleccion(){
+        view.desactivarSeleccion();
+    }
+    
+    private ActionListener getBorrarButtonActionListener(){
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                    if (view.getJugadoresTableSelectedItem()!=-1) {
+                        int confirmar = JOptionPane.showConfirmDialog(view, "Esta usted seguro?");
+                        if (confirmar == 0) {
+                            System.out.println("Se hace");
+                            OperacionBD.borrarPersonaje(getSelectedPlayerID(view.getJugadoresTableSelectedItem()));
+                        }
+                } else {
+                        JOptionPane.showMessageDialog(view, "Selecciona un personaje que borrar");
+                    }
+                    cargarDatos();
             }
         };
                 return al;

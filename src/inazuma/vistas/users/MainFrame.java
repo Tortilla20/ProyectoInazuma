@@ -47,7 +47,6 @@ public class MainFrame extends javax.swing.JFrame {
         menuMenu = new javax.swing.JMenu();
         sesionMenuItem = new javax.swing.JMenuItem();
         personajesTableMenuItem = new javax.swing.JMenuItem();
-        equiposTableMenuItem = new javax.swing.JMenuItem();
         salirMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,9 +72,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         personajesTableMenuItem.setText("Tabla de Personajes..");
         menuMenu.add(personajesTableMenuItem);
-
-        equiposTableMenuItem.setText("Tabla de Equipos..");
-        menuMenu.add(equiposTableMenuItem);
 
         salirMenuItem.setText("Salir");
         menuMenu.add(salirMenuItem);
@@ -129,9 +125,6 @@ public class MainFrame extends javax.swing.JFrame {
         sesionMenuItem.addActionListener(al);
     }
     
-    public void setEquiposTableMenuItemActionListener(ActionListener al){
-        equiposTableMenuItem.addActionListener(al);
-    }
     
     public void setSalirMenuItemActionListener(ActionListener al){
         salirMenuItem.addActionListener(al);
@@ -164,7 +157,6 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem equiposTableMenuItem;
     public javax.swing.JButton guestButton;
     private javax.swing.JLabel imageLabel;
     private javax.swing.JButton loginButton;

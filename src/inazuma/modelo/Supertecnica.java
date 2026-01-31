@@ -11,12 +11,12 @@ package inazuma.modelo;
 public class Supertecnica {
     private int id;
     private String nombre;
-    private int potencia;
+    private String potencia;
     private boolean coordinada;
     private Atributo atributo;
     private String tipo;
 
-    public Supertecnica(int id, String nombre, int potencia, boolean coordinada, Atributo atributo, String tipo) {
+    public Supertecnica(int id, String nombre, String potencia, boolean coordinada, Atributo atributo, String tipo) {
         this.id = id;
         this.nombre = nombre;
         this.potencia = potencia;
@@ -41,11 +41,11 @@ public class Supertecnica {
         this.nombre = nombre;
     }
 
-    public int getPotencia() {
+    public String getPotencia() {
         return potencia;
     }
 
-    public void setPotencia(int potencia) {
+    public void setPotencia(String potencia) {
         this.potencia = potencia;
     }
 

@@ -19,11 +19,6 @@
                 <Property name="text" type="java.lang.String" value="Tabla de Personajes.."/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="equiposTableMenuItem">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tabla de Equipos.."/>
-              </Properties>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="salirMenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Salir"/>
