@@ -78,10 +78,10 @@ public class PersonajeDialogController {
                     Image scaled = img.getScaledInstance(newWidth, rowHeight, Image.SCALE_SMOOTH);
                     this.view.setIconoLabel(new ImageIcon(scaled));
                 } else {
-                    this.view.setIconoLabel(new ImageIcon("ruta/a/imagen_defecto.png"));
+                    this.view.setIconoLabel(new ImageIcon());
                 }
             } catch (Exception e) {
-                this.view.setIconoLabel(new ImageIcon("ruta/a/imagen_defecto.png"));
+                this.view.setIconoLabel(new ImageIcon());
             }
         }
 
@@ -187,7 +187,7 @@ public class PersonajeDialogController {
                 } else {
                     row.add("");
                 }
-                if (e.getCapitan()!=null) {
+                if (e.getEntrenador()!=null) {
                     row.add(getImageIcon(e.getEntrenador().getImage()));
                 } else {
                     row.add("");
