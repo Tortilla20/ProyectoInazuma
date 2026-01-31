@@ -59,41 +59,53 @@ public class PersonajeDialogController {
         }
     }
     
-    private void cargarDatos(){
-        try {
-            Personaje personaje = OperacionBD.getPersonaje(id);
-            URL url = (new URI(personaje.getImage()).toURL());
-            BufferedImage img = ImageIO.read(url);
-            int rowHeight = 134;
-            int newWidth = img.getWidth() * rowHeight / img.getHeight();
-            Image scaled = img.getScaledInstance(newWidth, rowHeight, Image.SCALE_SMOOTH);
-            ImageIcon icon = new ImageIcon(scaled);
-            this.view.setIconoLabel(icon);
-            this.view.setNombreTextField(personaje.getNombre());
-            this.view.setAliasTextField(personaje.getAlias());
-            this.view.setGeneroComboBoxSelectedItem(personaje.getGenero());
-            this.view.setPosicionComboBoxSelectedItem(personaje.getPosicion());
-            this.view.setAtributoComboBoxSelectedItem(personaje.getAtributo().getNombre());
-            this.view.setDescripcionTextArea(personaje.getDescription());
-            this.view.setIconoTextField(personaje.getImage());
-            this.recargarTablaEquipos();
-            this.recargarTablaSupertecnicas();
-        } catch (URISyntaxException ex) {
-            System.getLogger(PersonajeDialogController.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-        } catch (MalformedURLException ex) {
-            System.getLogger(PersonajeDialogController.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-        } catch (IOException ex) {
-            System.getLogger(PersonajeDialogController.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+    private void cargarDatos() {
+    try {
+        Personaje personaje = OperacionBD.getPersonaje(id);
+        String enlaceImagen = personaje.getImage();
+
+
+        if (enlaceImagen == null || enlaceImagen.isBlank()) {
+            this.view.setIconoLabel(new ImageIcon("ruta/a/imagen_defecto.png"));
+        } else {
+            try {
+                URL url = new URL(enlaceImagen);
+                BufferedImage img = ImageIO.read(url);
+
+                if (img != null) {
+                    int rowHeight = 134;
+                    int newWidth = img.getWidth() * rowHeight / img.getHeight();
+                    Image scaled = img.getScaledInstance(newWidth, rowHeight, Image.SCALE_SMOOTH);
+                    this.view.setIconoLabel(new ImageIcon(scaled));
+                } else {
+                    this.view.setIconoLabel(new ImageIcon("ruta/a/imagen_defecto.png"));
+                }
+            } catch (Exception e) {
+                this.view.setIconoLabel(new ImageIcon("ruta/a/imagen_defecto.png"));
+            }
         }
-        
+
+        this.view.setNombreTextField(personaje.getNombre());
+        this.view.setAliasTextField(personaje.getAlias());
+        this.view.setGeneroComboBoxSelectedItem(personaje.getGenero());
+        this.view.setPosicionComboBoxSelectedItem(personaje.getPosicion());
+        this.view.setAtributoComboBoxSelectedItem(personaje.getAtributo().getNombre());
+        this.view.setDescripcionTextArea(personaje.getDescription());
+        this.view.setIconoTextField(personaje.getImage());
+
+        this.recargarTablaEquipos();
+        this.recargarTablaSupertecnicas();
+    } catch (Exception e) {
+       
     }
+}
     
     private void recargarTablaSupertecnicas(){
         this.view.clearSupertecnicasTable();
         Personaje personaje = OperacionBD.getPersonaje(id);
         List<Supertecnica> supertecnicas = OperacionBD.getSupertecnicasPersonaje(id);
         for (Supertecnica s : supertecnicas) {
-            try {
+
                 Vector row = new Vector();
                 row.add(s.getNombre());
                 row.add(s.getPotencia());
@@ -101,11 +113,7 @@ public class PersonajeDialogController {
                 row.add(s.isCoordinada());
                 row.add(getImageIcon(s.getAtributo().getImagen()));
                 view.addRowSupertecnicasTable(row);
-            } catch (URISyntaxException ex) {
-                System.getLogger(PersonajeDialogController.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-            } catch (IOException ex) {
-                System.getLogger(PersonajeDialogController.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-            }
+
         }
     }
     
@@ -137,18 +145,31 @@ public class PersonajeDialogController {
         OperacionBD.borrarTieneSupertecnicaPersonaje(id, supertecnicas.get(selected).getId());
     }
     
-    private ImageIcon getImageIcon(String enlace) throws URISyntaxException, MalformedURLException, IOException{
-        if (null==enlace){
+    private ImageIcon getImageIcon(String enlace) {
+
+        if (enlace == null || enlace.isBlank()) {
+
             return new ImageIcon();
         }
-            URL url = (new URI(enlace).toURL());
+
+        try {
+
+            URL url = new URL(enlace);
             BufferedImage img = ImageIO.read(url);
-            
+            if (img == null) {
+                return new ImageIcon();
+            }
             int rowHeight = 80;
             int newWidth = img.getWidth() * rowHeight / img.getHeight();
             Image scaled = img.getScaledInstance(newWidth, rowHeight, Image.SCALE_SMOOTH);
-            ImageIcon icon = new ImageIcon(scaled);
-            return icon;
+            return new ImageIcon(scaled);
+        } catch (MalformedURLException e) {
+            return new ImageIcon();
+        } catch (IOException e) {
+            return new ImageIcon();
+        } catch (Exception e) {
+            return new ImageIcon();
+        }
     }
     
     private void recargarTablaEquipos(){
@@ -156,7 +177,7 @@ public class PersonajeDialogController {
         Personaje personaje = OperacionBD.getPersonaje(id);
         List<Equipo> equipos = OperacionBD.getEquiposDePersonaje(personaje);
         for (Equipo e : equipos) {
-            try {
+            
                 Vector row = new Vector();
                 row.add(getImageIcon(e.getEscudo()));
                 row.add(e.getNombre());
@@ -172,11 +193,7 @@ public class PersonajeDialogController {
                     row.add("");
                 }
                 view.addRowEquiposTable(row);
-            } catch (URISyntaxException ex) {
-                System.getLogger(PersonajeDialogController.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-            } catch (IOException ex) {
-                System.getLogger(PersonajeDialogController.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-            }
+
         }
     }
     

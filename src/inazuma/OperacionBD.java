@@ -74,7 +74,7 @@ public class OperacionBD {
     }
     
     public static void addPersonaje(String icono, String nombre, String alias, String genero, String posicion, String atributo, String descripcion){
-        String sentencia = "INSERT INTO personaje (nombre,alias,descripcion,posicion,id_atributo,genero,id_usuario) VALUES (?,?,?,?,?,?,?)";
+        String sentencia = "INSERT INTO personaje (nombre,alias,descripcion,posicion,id_atributo,genero,id_usuario,imagen) VALUES (?,?,?,?,?,?,?,?)";
         Atributo atrib = null;
         for(Atributo a : listaAtributos){
             if(a.getNombre().equals(atributo)){
@@ -90,6 +90,7 @@ public class OperacionBD {
             ps.setInt(5, atrib.getId());
             ps.setString(6, genero);
             ps.setInt(7, usuarioActual.getId());
+            ps.setString(8, icono);
             ps.execute();
 
         } catch (SQLException ex) {
