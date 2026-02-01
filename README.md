@@ -144,7 +144,7 @@ Este proyecto se realizó siguiendo el patrón **MVC** (Modelo-Vista-Contolador)
 
 ---
 
-## ⚡Ejecución del ⚡
+## ⚡Ejecución del proyecto⚡
 Desde su IDE favorito tendrá que:
 1. Descargar el proyecto desde el github
 2. Asegurarse que tiene todos lo requisitos necesarios que se mencionaron anteriormente
