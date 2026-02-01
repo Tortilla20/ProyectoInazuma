@@ -157,7 +157,8 @@ Desde su IDE favorito tendrá que:
 Cuando inicia la aplicación lo primero que se ve, como bien muestra la imagen, es una ventana en la que puedes:
 - **Iniciar Sesión**
 - **Registrarte**
-- **Invitado**
+- Acceder como **Invitado**
+
 Cada usuario puede ver sus propios personajes y no los de los demás, en cambio, cuando inicias como invitado, cualquier usuario puede acceder sin tener que registrarse y a su vez ver algunos personajes que proporciona la aplicación
 <p align="center">
   <img src="mediaReadme/man1.png" alt="Alt">
