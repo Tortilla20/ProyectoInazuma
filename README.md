@@ -251,6 +251,7 @@ Aparte del filtrado por **Nombre**, tanbién se puede filtrar por, **Género**, 
 <p align="center">
   <img src="mediaReadme/man19.png" alt="Alt">
 </p>
+
 >Cabe destacar que todas las opciones mencionadas para el usuario Invitado también están disponibles para el usuario Normal/Registrado. Por este motivo, no se repetirán algunas en la siguiente explicación, ya que realizan exactamente la misma función.
 
 ## Accediendo como Usuario Registrado:
