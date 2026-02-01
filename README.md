@@ -149,3 +149,8 @@ Desde su IDE favorito tendrá que:
 1. Descargar el proyecto desde el github
 2. Asegurarse que tiene todos lo requisitos necesarios que se mencionaron anteriormente
 3. Ejecutar la clase **Inazuma.java** para poder iniciar la aplicación
+
+---
+
+## Manual de Usuario
+
