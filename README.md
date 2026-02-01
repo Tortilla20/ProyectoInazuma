@@ -1,5 +1,7 @@
 <h1 align="center">INACODEX</h1>
-<p align="center">Adán Otero López / Christian Castro Iglesias / Iván Duro Fernández</p>
+<p align="center">Christian Castro Iglesias</p>
+<p align="center">Adán Otero López</p>
+<p align="center">Iván Duro Fernández</p>
 ---
 ## Índice
 (INTRODUCIR ÍNDICE AL TERMINAR README)
