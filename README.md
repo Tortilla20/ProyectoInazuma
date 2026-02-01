@@ -5,6 +5,7 @@
 
 ## Índice
 - [Introducción](#introducción)
+- [Manual técnico para desarrolladores](#Manualtécnicoparadesarrolladores)
 
 ## ⚡Introducción⚡
 Este es un programa / app que gestiona con consultas los algunos de los personajes
