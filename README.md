@@ -159,7 +159,8 @@ Cuando inicia la aplicación lo primero que se ve, como bien muestra la imagen, 
 - **Registrarte**
 - Acceder como **Invitado**
 
-Cada usuario puede ver sus propios personajes y no los de los demás, en cambio, cuando inicias como invitado, cualquier usuario puede acceder sin tener que registrarse y a su vez, ver algunos personajes que proporciona la aplicación
+Cada usuario puede ver sus propios personajes y no los de los demás, en cambio, cuando inicias como invitado, cualquier usuario puede acceder sin tener que registrarse y a su vez, ver algunos personajes que proporciona la aplicación.
+
 <p align="center">
   <img src="mediaReadme/man1.png" alt="Alt">
 </p>
@@ -178,4 +179,9 @@ Si por algún motivo, se intenta registrar con uno o los dos campos vacíos, el 
 Si todo va bien, y se cubrieron todos los campos, el programa lanzará otra mensaje diciendo que el regitro fue exitoso
 <p align="center">
   <img src="mediaReadme/man4.png" alt="Alt">
+</p>
+
+Para iniciar sesión, habría que cubrir los campos de **Nombre** y de **Contraseña** para acceder a la pantalla principal
+<p align="center">
+  <img src="mediaReadme/man5.png" alt="Alt">
 </p>
