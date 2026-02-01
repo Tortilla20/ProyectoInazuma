@@ -216,7 +216,12 @@ Si se quiere borrar un personaje, el programa lanzará un mensaje de confirmaci�
   <img src="mediaReadme/man10.png" alt="Alt">
 </p>
 
-Para modificar, abajo se muestra un video de como se elimina una supertecnica del personaje **Xene**, y se añade otra distinta verificando después que los cambios se hayan realizado correctamente
+Para mostrar la información, basta con seleccionar el personaje deseado y pulsar el botón **Mostrar**
 <p align="center">
   <img src="mediaReadme/man11.gif">
+</p>
+
+Para modificar, abajo se muestra un video de como se elimina una supertecnica del personaje **Xene**, y se añade otra distinta verificando después que los cambios se hayan realizado correctamente
+<p align="center">
+  <img src="mediaReadme/man12.gif">
 </p>
