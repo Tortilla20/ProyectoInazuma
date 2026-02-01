@@ -287,3 +287,15 @@ Para contrastrar la información que se inserto antes, solo habrá que pulsar el
 
 ## Extras
 
+1 - Cifrado de contraseña de usuarios de la base de datos
+2 - Diseñar ventana para que el admin pueda gestionar usuarios desde la propia aplicacion
+3 - Boton interno para controlar el volumen de la cancion de la propia aplicaicon
+4 - Mejorar la infraestructura eléctrica de Galicia
+
+---
+
+## Reparto de tareas
+**Christian** - Conexión de base de datos, sentencias sql, diagrama en draw.io, modelo de datos en Java, diseño de las funciones CRUD, monitorización del correcto desarrollo de la aplicación
+**Adán** - Creación de las interfaces, creación de los controladores, investigacion y adquisicion de las librerias requeridas, incorporación de las funciones CRUD previamente diseñadas
+**Iván** - Script de cracion de la base de datos, inserción de datos por defecto de la base de datos, gestion de usuarios de la aplicación, personalización de la interfaz y creación del Readme
+**TODOS** - Analizar requerimientos y funciones necesarias, apoyo moral de los demás integrantes
