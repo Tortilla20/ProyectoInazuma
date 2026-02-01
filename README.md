@@ -320,5 +320,5 @@ Para contrastrar la información que se inserto antes, solo habrá que pulsar el
 
 **TODOS** - Analizar requerimientos y funciones necesarias, apoyo moral de los demás integrantes
 
-## ⚡HORAS INVERTIDAS: ⚡
+## ⚡Horas Invertidas: ⚡
 30 horas de media por cada integrante + horas de clase
