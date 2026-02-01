@@ -1,5 +1,5 @@
-<h1 align="center">Broker de Bolsa</h1>
-<p align="center">Adán Otero López, Christian Castro Iglesias e Iván Duro Fernández</p>
+<h1 align="center">INACODEX</h1>
+<p align="center">Adán Otero López / Christian Castro Iglesias / Iván Duro Fernández</p>
 ---
 ## Índice
 (INTRODUCIR ÍNDICE AL TERMINAR README)
