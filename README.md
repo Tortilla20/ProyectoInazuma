@@ -4,7 +4,7 @@
 <p align="center">Iván Duro Fernández</p>
 
 ## Índice
-(INTRODUCIR ÍNDICE AL TERMINAR README)
+- [Introducción](#introducción)
 
 ## ⚡Introducción⚡
 Este es un programa / app que gestiona con consultas los algunos de los personajes
@@ -305,3 +305,6 @@ Para contrastrar la información que se inserto antes, solo habrá que pulsar el
 **Iván** - Script de cracion de la base de datos, inserción de datos por defecto de la base de datos, gestion de usuarios de la aplicación, personalización de la interfaz y creación del Readme
 
 **TODOS** - Analizar requerimientos y funciones necesarias, apoyo moral de los demás integrantes
+
+## HORAS INVERTIDAS:
+30 horas de media por cada integrante + horas de clase
