@@ -247,7 +247,9 @@ Aparte del filtrado por **Nombre**, tanbién se puede filtrar por, **Género**, 
 <p align="center">
   <img src="mediaReadme/man17.png" width="45%" style="margin-right:10px;">
   <img src="mediaReadme/man18.png" width="45%">
-  <img src="mediaReadme/man19.png" width="45%">
+</p>
+<p align="center">
+  <img src="mediaReadme/man19.png" alt="Alt">
 </p>
 
 ## Accediendo como Usuario Registrado:
