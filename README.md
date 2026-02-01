@@ -35,6 +35,23 @@ anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/in
   <img src="mediaReadme/Diagrama.png" alt="Alt">
 </p>
 
+Los requisitos del programa según el modelo entidad-relación son los siguientes:
+
+Un **Usuario** (lista) se define por un ID, un nombre y una contraseña. Cada Lista contiene uno o varios personajes, y cada **Personaje** pertenece a una única Lista (relación 1:N Contiene).
+Un **Personaje** se define por un ID, nombre, alias, descripción, posición, imagen y género.
+Los **Personajes** se relacionan con Equipos de varias formas:
+- Un **personaje** juega en uno o varios equipos y un equipo puede tener uno o varios personajes (relación N:M Juega).
+- Un **personaje** puede capitanear uno o varios equipos, y cada equipo tiene un único capitán (relación 1:N Capitanea).
+- Un **personaje** puede entrenar uno o varios equipos, y cada equipo tiene un único entrenador (relación 1:N Entrena).
+Un **Equipo** se define por un ID, nombre, región y escudo.
+Los **Personajes** pueden tener Supertécnicas:
+- Un personaje puede tener una o varias supertécnicas, y una supertécnica puede pertenecer a uno o varios personajes (relación N:M Tiene).
+Una **Supertécnica** se define por ID, nombre, potencia, coordenada y tipo.
+Tanto los **Personajes** como las **Supertécnicas** se relacionan con Atributos:
+- Un **personaje** pertenece a un único atributo, y un atributo puede estar asociado a varios personajes (relación N:1 Pertenece).
+- Una **supertécnica** conlleva un único atributo, y un atributo puede estar asociado a varias supertécnicas (relación N:1 Conlleva).
+- Un **Atributo** se define por un ID, nombre e imagen.
+
 ### Tablas
 
 ### ENTIDADES
