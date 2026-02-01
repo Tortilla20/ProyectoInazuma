@@ -216,13 +216,7 @@ Si se quiere borrar un personaje, el programa lanzará un mensaje de confirmaci�
   <img src="mediaReadme/man10.png" alt="Alt">
 </p>
 
-Para mostrar la información, basta con seleccionar el personaje deseado y pulsar el botón **Mostrar**, como se ve en la imagen, la información de los personaje son:
-- Nombre
-- Alias
-- Descripción
-- Supertécnicas
-- Equipos
-- Entre otras
+Para mostrar la información, basta con seleccionar el personaje deseado y pulsar el botón **Mostrar**, como se ve en la imagen, la información de los personaje son: Nombre, Alias, Descripción, Supertécnicas, Equipos, Entre otras
 <p align="center">
   <img src="mediaReadme/man11.png" alt="Alt">
 </p>
