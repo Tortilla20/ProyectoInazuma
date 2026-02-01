@@ -5,8 +5,8 @@
 
 ## Índice
 - [Introducción](#introducción)
-- [Manual técnico para desarrolladores](#Manualtécnicoparadesarrolladores)
-- [Horas Invertidas](#HorasInvertidas)
+- [Manual técnico para desarrolladores](#Manual-técnico-para-desarrolladores)
+- [Horas Invertidas](#Horas-Invertidas)
 
 ## ⚡Introducción⚡
 Este es un programa / app que gestiona con consultas los algunos de los personajes
