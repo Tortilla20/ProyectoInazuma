@@ -154,7 +154,11 @@ Desde su IDE favorito tendrá que:
 
 ## Manual de Usuario
 
-Cuando inicia la aplicación lo primero que se ve, como bien muestra la imagen, es una ventana en la que puedes **Iniciar Sesión** o **Registrarte** si no tienes una cuenta creada, en la que cada usuario puede ver sus propios personajes y no los de los demás o iniciar como **Invitado** en la que puede iniciar todo el mundo y a su vez ver algunos personajes que proporciona la aplicación
+Cuando inicia la aplicación lo primero que se ve, como bien muestra la imagen, es una ventana en la que puedes:
+- **Iniciar Sesión**
+- **Registrarte**
+- **Invitado**
+Cada usuario puede ver sus propios personajes y no los de los demás, en cambio, cuando inicias como invitado, cualquier usuario puede acceder sin tener que registrarse y a su vez ver algunos personajes que proporciona la aplicación
 <p align="center">
   <img src="mediaReadme/man1.png" alt="Alt">
 </p>
