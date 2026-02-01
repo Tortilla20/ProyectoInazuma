@@ -185,3 +185,8 @@ Para iniciar sesión, habría que cubrir los campos de **Nombre** y de **Contras
 <p align="center">
   <img src="mediaReadme/man5.png" alt="Alt">
 </p>
+
+En el siguiente video se muestra como se intena iniciar sesión con el usuario **Christian**, que fue anteriormente registrado, pero como se pone mal la contraseña no le deja iniciar, luego al poner la credencial bien, ya nos dejaria acceder para ver los personajes
+<p align="center">
+  <video src="mediaReadme/man6.mp4" controls width="600"></video>
+</p>
