@@ -5,8 +5,20 @@
 
 ## Índice
 - [Introducción](#introducción)
-- [Manual técnico para desarrolladores](#⚡Manual-técnico-para-desarrolladores⚡)
-- [Horas Invertidas](#Horas-Invertidas)
+- [Manual técnico para desarrolladores](#manual-técnico-para-desarrolladores)
+  - [Requisitos](#requisitos)
+- [Modelo Entidad-Relación](#modelo-entidad-relación)
+- [Tablas](#tablas)
+  - [Entidades](#entidades)
+  - [Relaciones N:M](#relaciones-nm)
+- [Estructura](#estructura)
+- [Ejecución del proyecto](#ejecución-del-proyecto)
+- [Manual de Usuario](#manual-de-usuario)
+  - [Accediendo como Invitado](#accediendo-como-invitado)
+  - [Accediendo como Usuario Registrado](#accediendo-como-usuario-registrado)
+- [Extras](#extras)
+- [Reparto de tareas](#reparto-de-tareas)
+- [Horas invertidas](#horas-invertidas)
 
 ## ⚡Introducción⚡
 Este es un programa / app que gestiona con consultas los algunos de los personajes
