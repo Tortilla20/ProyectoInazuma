@@ -1,4 +1,4 @@
-<img width="476" height="360" alt="image" src="https://github.com/user-attachments/assets/4319abad-900b-4df1-b5a5-b777985bb2be" /><h1 align="center">INACODEX</h1>
+<h1 align="center">INACODEX</h1>
 <p align="center">Christian Castro Iglesias</p>
 <p align="center">Adán Otero López</p>
 <p align="center">Iván Duro Fernández</p>
