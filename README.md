@@ -63,7 +63,7 @@ Tanto los **Personajes** como las **Supertécnicas** se relacionan con Atributos
 
 ---
 
-##⚡Tablas⚡
+## ⚡Tablas⚡
 
 ### ENTIDADES
 Usuario: `3`
@@ -199,7 +199,7 @@ Una vez ya estemos logueados, lo botones de **Iniciar Sesión**, **Resgistrarse*
 
 Como bien se menciono antes, hay dos formas de ver los personajes, accediendo como **Invitado**, en la que puedes ver todos los personajes del programa o **Iniciando Sesión**, en la que pudes ver **TUS** personajes y no los de los demás. A continuación se mostrarán imágenes de las dos formas:
 
-## ⚡ Accediendo como Invitado: ⚡
+## ⚡Accediendo como Invitado:⚡
 
 Cuando pinchas en ver los personajes se te muestra ka siguiente ventana, que son los personaje que trae implementado la aplicación
 <p align="center">
@@ -254,7 +254,7 @@ Aparte del filtrado por **Nombre**, tanbién se puede filtrar por, **Género**, 
 
 >Cabe destacar que todas las opciones mencionadas para el usuario Invitado también están disponibles para el usuario Normal/Registrado. Por este motivo, no se repetirán algunas en la siguiente explicación, ya que realizan exactamente la misma función.
 
-## ⚡Accediendo como Usuario Registrado: ⚡
+## ⚡Accediendo como Usuario Registrado:⚡
 
 Ahora se verá como se muestran los personajes de un usuario normal. La primera vez que te registras, como bien se muestra en la imagen, no tendrás ningún personaje en la tabla, ya que tienes que crearlo para que se pueda mostrar
 <p align="center">
@@ -285,19 +285,19 @@ Para contrastrar la información que se inserto antes, solo habrá que pulsar el
 
 ---
 
-## ⚡Extras ⚡
+## ⚡Extras⚡
 
 1 - Cifrado de contraseña de usuarios de la base de datos
 
-2 - Diseñar ventana para que el admin pueda gestionar usuarios desde la propia aplicacion
+2 - Diseñar ventana para que el admin pueda gestionar usuarios desde la propia aplicación
 
-3 - Boton interno para controlar el volumen de la cancion de la propia aplicaicon
+3 - Botón interno para controlar el volumen de la canción de fondo de la propia aplicación
 
 4 - Mejorar la infraestructura eléctrica de Galicia
 
 ---
 
-## ⚡Reparto de tareas ⚡
+## ⚡Reparto de tareas⚡
 **Christian** - Conexión de base de datos, sentencias sql, diagrama en draw.io, modelo de datos en Java, diseño de las funciones CRUD, monitorización del correcto desarrollo de la aplicación
 
 **Adán** - Creación de las interfaces, creación de los controladores, investigacion y adquisicion de las librerias requeridas, incorporación de las funciones CRUD previamente diseñadas
