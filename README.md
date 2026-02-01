@@ -20,7 +20,7 @@ de consultar la información proporcionada por el programa en la base de datos
 
 ---
 
-## 1. Manual técnico para desarrolladores
+## Manual técnico para desarrolladores
 
 ### Requisitos
 - **Java SE 17 o superior**: El proyecto se desarrollo usando Java 17, por lo cuál, se necesita
@@ -32,6 +32,8 @@ habría que instalarlo [(descargar)](https://dev.mysql.com/downloads/mysql/)
 - **IDE Utilizado**: Por último, el proyecto de desarrollo en el IDE Netbeans, si no se tiene instalado, no hace falta
 instalarlo porque se puede utilizar cualquier otro IDE compatible con Java, pero se recomiendo utilizar el
 anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/index.html)
+
+---
 
 ### Modelo Entidad-Relación
 <p align="center">
@@ -58,6 +60,8 @@ Tanto los **Personajes** como las **Supertécnicas** se relacionan con Atributos
 - Un **personaje** pertenece a un único atributo, y un atributo puede estar asociado a varios personajes (relación N:1 Pertenece).
 - Una **supertécnica** conlleva un único atributo, y un atributo puede estar asociado a varias supertécnicas (relación N:1 Conlleva).
 - Un **Atributo** se define por un ID, nombre e imagen.
+
+---
 
 ### Tablas
 
@@ -138,8 +142,10 @@ Este proyecto se realizó siguiendo el patrón **MVC** (Modelo-Vista-Contolador)
   <img src="mediaReadme/controlador.png" alt="Alt">
 </p>
 
+---
+
 ## Ejecución del proyecto
 Desde su IDE favorito tendrá que:
 1. Descargar el proyecto desde el github
 2. Asegurarse que tiene todos lo requisitos necesarios que se mencionaron anteriormente
-3. Ejecutar la clase Inazuma.java para poder iniciar la aplicación
+3. Ejecutar la clase **Inazuma.java** para poder iniciar la aplicación
