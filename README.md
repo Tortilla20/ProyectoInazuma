@@ -190,3 +190,9 @@ En el siguiente video se muestra como se intena iniciar sesión con el usuario *
 <p align="center">
   <img src="mediaReadme/man6.gif">
 </p>
+
+Una vez ya estemos logueados, lo botones de **Iniciar Sesión**, **Resgistrarse** y **Acceder como Invitado** se ocultan y se muestra un MenuBar, como se muestra en la imagen, llamado **Opciones**, en la que podemos ver los personajes o salir de la aplicación, y a la drecha, se muestra el nombre del usuario que tiene la sesión iniciada en ese momento
+
+<p align="center">
+  <img src="mediaReadme/man7.png" alt="Alt">
+</p>
