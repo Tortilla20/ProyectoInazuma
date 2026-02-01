@@ -22,7 +22,7 @@ de consultar la información proporcionada por el programa en la base de datos
 
 ## Manual técnico para desarrolladores
 
-### Requisitos
+## Requisitos
 - **Java SE 17 o superior**: El proyecto se desarrollo usando Java 17, por lo cuál, se necesita
 esta versión o superiores para poder iniciar el programa [(descargar)](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - **Ant**: También, este proyecto se realizó en Java con Ant, por lo que se deberá tener Ant instalado
@@ -35,7 +35,7 @@ anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/in
 
 ---
 
-### Modelo Entidad-Relación
+## Modelo Entidad-Relación
 <p align="center">
   <img src="mediaReadme/Diagrama.png" alt="Alt">
 </p>
@@ -63,7 +63,7 @@ Tanto los **Personajes** como las **Supertécnicas** se relacionan con Atributos
 
 ---
 
-### Tablas
+## Tablas
 
 ### ENTIDADES
 Usuario: `3`
@@ -113,7 +113,7 @@ SUPERTECNICA: `6`
 | `TIPO` | VARCHAR(35) | NO | - | - |
 | `ID_ATRIBUTO` | INT | SÍ | - | SÍ |
 
-### RELACIONES N:M
+## RELACIONES N:M
 
 JUEGA: `2`
 | NOMBRE | TIPO DE DATO | PERMITE NULL | CLAVE PRIMARIA | CLAVE FORANEA |
