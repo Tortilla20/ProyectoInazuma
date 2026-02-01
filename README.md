@@ -251,10 +251,11 @@ Aparte del filtrado por **Nombre**, tanbién se puede filtrar por, **Género**, 
 <p align="center">
   <img src="mediaReadme/man19.png" alt="Alt">
 </p>
+>Cabe destacar que todas las opciones mencionadas para el usuario Invitado también están disponibles para el usuario Normal/Registrado. Por este motivo, no se repetirán algunas en la siguiente explicación, ya que realizan exactamente la misma función.
 
 ## Accediendo como Usuario Registrado:
 
-Ahora se verá como se muestran los personajes se un usuario normal, la primera vez que te registras, como bien se muestra en la imagen, no tendrás ningún perosnaje en la tabla, ya que tienes que crearlo para que se pueda mostrar
+Ahora se verá como se muestran los personajes de un usuario normal, la primera vez que te registras, como bien se muestra en la imagen, no tendrás ningún perosnaje en la tabla, ya que tienes que crearlo para que se pueda mostrar
 
 <p align="center">
   <img src="mediaReadme/man16.png" alt="Alt">
