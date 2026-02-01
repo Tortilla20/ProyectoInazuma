@@ -128,3 +128,6 @@ TIENE: `2`
 ## Estructura
 
 Este proyecto se realizó siguiendo el patrón MVC (Modelo-Vista-Contolador) visto en clase:
+<p align="center">
+  <img src="mediaReadme/modelo.png" alt="Alt">
+</p>
