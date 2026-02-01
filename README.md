@@ -232,3 +232,7 @@ Y por último, está añadir personaje, en el que si se pulsa en el botón **Añ
   <img src="mediaReadme/man13.png" width="45%" style="margin-right:10px;">
   <img src="mediaReadme/man14.png" width="45%">
 </p>
+
+<p align="center">
+  <img src="mediaReadme/man15.png" alt="Alt">
+</p>
