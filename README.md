@@ -131,3 +131,6 @@ Este proyecto se realizó siguiendo el patrón MVC (Modelo-Vista-Contolador) vis
 <p align="center">
   <img src="mediaReadme/modelo.png" alt="Alt">
 </p>
+<p align="center">
+  <img src="mediaReadme/vista.png" alt="Alt">
+</p>
