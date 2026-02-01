@@ -1,4 +1,4 @@
-<h1 align="center">INACODEX</h1>
+<img width="476" height="360" alt="image" src="https://github.com/user-attachments/assets/4319abad-900b-4df1-b5a5-b777985bb2be" /><h1 align="center">INACODEX</h1>
 <p align="center">Christian Castro Iglesias</p>
 <p align="center">Adán Otero López</p>
 <p align="center">Iván Duro Fernández</p>
@@ -206,8 +206,12 @@ Cuando pinchas en ver los personajes se te muestra ka siguiente ventana, que son
   <img src="mediaReadme/man8.png" alt="Alt">
 </p>
 
-Todo el mundo pude ver la informacion de estos, modificarlos, borrarlos e incluso añadir algunos para que los demás los vean, pero si se dea mostrar la informacion de alguno o modificarlo, habrá que seleccionar el personaje, si no es así, se mostrá un mensaje recordando que habrá que seleccionarlo
+Todo el mundo pude ver la informacion de estos, modificarlos, borrarlos e incluso añadir algunos para que los demás los vean, pero si se desea mostrar la informacion de alguno, borrarlo o modificarlo, habrá que seleccionar el personaje, si no es así, se mostrá un mensaje recordando que habrá que seleccionarlo
 <p align="center">
   <img src="mediaReadme/man9.png" alt="Alt">
 </p>
 
+Si se quiere borrar un personaje, el programa lanzará un mensaje de confirmación para que el usuario responda a si quiere borrar ese personaje
+<p align="center">
+  <img src="mediaReadme/man10.png" alt="Alt">
+</p>
