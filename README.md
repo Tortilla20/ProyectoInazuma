@@ -236,3 +236,24 @@ Y por último, está añadir personaje, en el que si se pulsa en el botón **Añ
 <p align="center">
   <img src="mediaReadme/man15.png" alt="Alt">
 </p>
+
+Luego, en la parte de arriba, se puede filtrar esos personajes, primero, como se muestra en la imagen, se filtra, solamente por nombre
+
+<p align="center">
+  <img src="mediaReadme/man16.png" alt="Alt">
+</p>
+
+Aparte del filtrado por **Nombre**, tanbién se puede filtrar por, **Género**, **Posición** y por **Atributo**, abajo se muestra un ejemplo de como se filtra por esos campos
+<p align="center">
+  <img src="mediaReadme/man17.png" width="45%" style="margin-right:10px;">
+  <img src="mediaReadme/man18.png" width="45%">
+  <img src="mediaReadme/man19.png" width="45%">
+</p>
+
+## Accediendo como Usuario Registrado:
+
+Ahora se verá como se muestran los personajes se un usuario normal, la primera vez que te registras, como bien se muestra en la imagen, no tendrás ningún perosnaje en la tabla, ya que tienes que crearlo para que se pueda mostrar
+
+<p align="center">
+  <img src="mediaReadme/man16.png" alt="Alt">
+</p>
