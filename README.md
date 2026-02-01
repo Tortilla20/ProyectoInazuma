@@ -256,8 +256,29 @@ Aparte del filtrado por **Nombre**, tanbién se puede filtrar por, **Género**, 
 
 ## Accediendo como Usuario Registrado:
 
-Ahora se verá como se muestran los personajes de un usuario normal, la primera vez que te registras, como bien se muestra en la imagen, no tendrás ningún perosnaje en la tabla, ya que tienes que crearlo para que se pueda mostrar
+Ahora se verá como se muestran los personajes de un usuario normal. La primera vez que te registras, como bien se muestra en la imagen, no tendrás ningún personaje en la tabla, ya que tienes que crearlo para que se pueda mostrar
+<p align="center">
+  <img src="mediaReadme/man20.png" alt="Alt">
+</p>
+
+Para poder crear un personaje, como bien se explico antes, hanrá que pulsar el botón se añadir y cubrir una serie de campos que pide el programa
+<p align="center">
+  <img src="mediaReadme/man21.png" alt="Alt">
+</p>
+
+Una vez cubiertos los campos, se mostrará un mensaje de confirmación en el que te preguntará si deas guardar el personaje creado
+<p align="center">
+  <img src="mediaReadme/man22.png" alt="Alt">
+</p>
+
+Ya creado, ahora si que se muestra en la lista. Ese personaje, solo lo puede ver ese usuario, si se desea iniciar sesión con otro distinto, no tendrá la opción de verlo
 
 <p align="center">
-  <img src="mediaReadme/man16.png" alt="Alt">
+  <img src="mediaReadme/man23.png" alt="Alt">
+</p>
+
+Para contrastrar la información que se inserto antes, solo habrá que pulsar el botón de mostrar, con el personaje seleccionado para ver que toda la información es correcta
+
+<p align="center">
+  <img src="mediaReadme/man24.png" alt="Alt">
 </p>
