@@ -5,7 +5,7 @@
 
 ## Índice
 - [Introducción](#introducción)
-- [Manual técnico para desarrolladores](#Manual-técnico-para-desarrolladores)
+- [Manual técnico para desarrolladores](#⚡Manual-técnico-para-desarrolladores⚡)
 - [Horas Invertidas](#Horas-Invertidas)
 
 ## ⚡Introducción⚡
