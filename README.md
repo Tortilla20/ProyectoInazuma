@@ -1,5 +1,5 @@
 <h1 align="center">INACODEX</h1>
-<p align="center">Christian Castro Iglesias                 Adán Otero López</p>
+<p align="center">Christian Castro Iglesias</p>
 <p align="center">Adán Otero López</p>
 <p align="center">Iván Duro Fernández</p>
 
