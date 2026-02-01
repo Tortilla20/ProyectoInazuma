@@ -196,3 +196,12 @@ Una vez ya estemos logueados, lo botones de **Iniciar Sesión**, **Resgistrarse*
 <p align="center">
   <img src="mediaReadme/man7.png" alt="Alt">
 </p>
+
+Como bien se menciono antes, hay dos formas de ver los personajes, accediendo como **Invitado**, en la que puedes ver todos los personajes del programa, modificarlos, borrarlos, crearlos, etc. o **Iniciando Sesión**, en la que pudes ver **TUS** personajes y no los de los demás. A continuación se mostrarán imágenes de las dos formas:
+
+## Accediendo como Invitado:
+
+Cuando pinchas en ver los personajes se te muestra ka siguiente ventana, que son los personaje que trae implementado la aplicación
+<p align="center">
+  <img src="mediaReadme/man8.png" alt="Alt">
+</p>
