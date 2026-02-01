@@ -127,7 +127,7 @@ TIENE: `2`
 
 ## Estructura
 
-Este proyecto se realizó siguiendo el patrón MVC (Modelo-Vista-Contolador) visto en clase:
+Este proyecto se realizó siguiendo el patrón **MVC** (Modelo-Vista-Contolador) visto en clase:
 <p align="center">
   <img src="mediaReadme/modelo.png" alt="Alt">
 </p>
@@ -137,3 +137,9 @@ Este proyecto se realizó siguiendo el patrón MVC (Modelo-Vista-Contolador) vis
 <p align="center">
   <img src="mediaReadme/controlador.png" alt="Alt">
 </p>
+
+## Ejecución del proyecto
+Desde su IDE favorito tendrá que:
+1. Descargar el proyecto desde el github
+2. Asegurarse que tiene todos lo requisitos necesarios que se mencionaron anteriormente
+3. Ejecutar la clase Inazuma.java para poder iniciar la aplicación
