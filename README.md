@@ -316,7 +316,7 @@ Para contrastrar la información que se inserto antes, solo habrá que pulsar el
 
 **Adán** - Creación de las interfaces, creación de los controladores, investigacion y adquisicion de las librerias requeridas, incorporación de las funciones CRUD previamente diseñadas
 
-**Iván** - Script de cracion de la base de datos, inserción de datos por defecto de la base de datos, gestion de usuarios de la aplicación, personalización de la interfaz y creación del Readme
+**Iván** - Script de creación de la base de datos, inserción de datos por defecto de la base de datos, gestion de usuarios de la aplicación, personalización de la interfaz y creación del Readme
 
 **TODOS** - Analizar requerimientos y funciones necesarias, apoyo moral de los demás integrantes
 
