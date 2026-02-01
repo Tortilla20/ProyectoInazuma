@@ -1,5 +1,6 @@
 package inazuma.vistas;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -29,6 +30,7 @@ public class PersonajeDialog extends javax.swing.JDialog {
         initComponents();
         this.setTitle("Jugador");
         addTableRenderer();
+        this.getContentPane().setBackground(new Color(255,183,48));
     }
 
     public PersonajeDialog(java.awt.Dialog parent, boolean modal) {
@@ -36,6 +38,8 @@ public class PersonajeDialog extends javax.swing.JDialog {
         initComponents();
         this.setTitle("Jugador");
         addTableRenderer();
+        this.getContentPane().setBackground(new Color(255,183,48));
+        confirmarButton.setBackground(new Color(255,255,255));
     }
 
     /**

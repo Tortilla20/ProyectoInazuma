@@ -1,5 +1,6 @@
 package inazuma.vistas;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.util.Vector;
@@ -26,7 +27,19 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         addTableRenderer();
+        aplicarButton.setBackground(new Color(255,255,255));
+        borrarButton.setBackground(new Color(255,255,255));
+        modificarButton.setBackground(new Color(255,255,255));
+        anhadirButton.setBackground(new Color(255,255,255));
+        mostrarButton.setBackground(new Color(255,255,255));
+        generoComboBox.setBackground(new Color(255,255,255));
+        atributoComboBox.setBackground(new Color(255,255,255));
+        posicionComboBox.setBackground(new Color(255,255,255));
+        
         this.setTitle("Tabla de Personajes");
+        
+        this.getContentPane().setBackground(new Color(255,183,48));
+        jugadoresTable.setBackground(new Color(255,255,255));
     }
 
     /**
@@ -52,6 +65,7 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
         modificarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconImage(null);
 
         nombreLabel.setText("Nombre:");
 
@@ -99,7 +113,7 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tablaJugadoresScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
+                    .addComponent(tablaJugadoresScrollPane)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nombreLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -137,7 +151,7 @@ public class PersonajesTableDialog extends javax.swing.JDialog {
                     .addComponent(atributoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(aplicarButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tablaJugadoresScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
+                .addComponent(tablaJugadoresScrollPane)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mostrarButton)

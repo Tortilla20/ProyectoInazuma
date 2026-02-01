@@ -22,6 +22,7 @@ public class MainFrameController {
         this.view.addRegisterButtonActionListener(this.getRegisterButtonListener());
         this.view.addLoginButtonActionListener(this.getLoginButtonListener());
         this.view.invitadoActionListener(this.getInvitadoActionListener());
+        this.view.setExitActionListener(this.getExitActionListener());
         //TODO otros menuItems
     }
     
@@ -77,6 +78,16 @@ public class MainFrameController {
             @Override
             public void actionPerformed(ActionEvent e) {           
                 view.enableDisableBotonesLogin(false);
+            }
+        };
+        return al;
+    }
+    
+    private ActionListener getExitActionListener() {
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                view.dispose();
             }
         };
         return al;

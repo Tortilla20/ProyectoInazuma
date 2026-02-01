@@ -40,9 +40,9 @@ public class LoginController {
                 String passwd = view.getPasswd();
                 Usuario usuario = new Usuario(listaUsuarios.size(), username, passwd);
                 if (OperacionBD.usuarioEsCorrecto(usuario) == true) {
-
                     OperacionBD.actualizarUsuarioActual(usuario);
-                    mainFrame.updateForLogin();
+                    mainFrame.pantallaLogueada();
+                    mainFrame.setUsuarioLogueado(usuario.getUsuario());
                     mainFrame.setVisible(true);
                     view.dispose();
                 }

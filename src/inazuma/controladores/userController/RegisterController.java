@@ -62,7 +62,8 @@ public class RegisterController {
                     actualizarListaUsuarios();
                     
 
-                    mainFrame.updateForLogin();
+                    mainFrame.pantallaLogueada();
+                    mainFrame.setUsuarioLogueado(usuario.getUsuario());
                     mainFrame.setVisible(true);
                     view.dispose();
                 }

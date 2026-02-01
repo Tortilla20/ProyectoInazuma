@@ -1,8 +1,16 @@
 package inazuma.vistas.users;
 
-import inazuma.controladores.userController.MusicController;
+import inazuma.OperacionBD;
+import inazuma.controladores.MusicController;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -13,21 +21,31 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    
     private static boolean musicaIniciada = false;
-    
+    private JLabel fondoLabel;
+    private JLabel userLabel;
+
     public MainFrame() {
         initComponents();
-        this.getContentPane().setBackground(new Color(255,255,255));
-        loginButton.setBackground(new Color(255,112,40));
-        registerButton.setBackground(new Color(255,112,40));
-        guestButton.setBackground(new Color(255,112,40));
+        this.getContentPane().setBackground(new Color(255, 255, 255));
+        loginButton.setBackground(new Color(255, 255, 255));
+        registerButton.setBackground(new Color(255, 255, 255));
+        guestButton.setBackground(new Color(255, 255, 255));
         menuBar.setVisible(false);
-        if(!musicaIniciada) {
+        if (!musicaIniciada) {
             MusicController musica = new MusicController();
             musica.play("src/resources/OpeningIE.wav");
             musicaIniciada = true;
         }
+        ImageIcon backgroundIcon = new ImageIcon("src/resources/evans.jpg");
+        fondoLabel = new JLabel(backgroundIcon);
+        fondoLabel.setBounds(0, 0, getWidth(), getHeight());
+        getContentPane().add(fondoLabel, new Integer(Integer.MIN_VALUE));
+
+        userLabel = new JLabel();
+        userLabel.setForeground(Color.BLACK);
+        menuBar.add(Box.createHorizontalGlue());
+        menuBar.add(userLabel);
     }
 
     /**
@@ -45,7 +63,6 @@ public class MainFrame extends javax.swing.JFrame {
         guestButton = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         menuMenu = new javax.swing.JMenu();
-        sesionMenuItem = new javax.swing.JMenuItem();
         personajesTableMenuItem = new javax.swing.JMenuItem();
         salirMenuItem = new javax.swing.JMenuItem();
 
@@ -56,7 +73,6 @@ public class MainFrame extends javax.swing.JFrame {
         registerButton.setText("Registrar");
 
         imageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/logoInazuma.png"))); // NOI18N
-        imageLabel.setText("jLabel2");
 
         guestButton.setText("Invitado");
         guestButton.addActionListener(new java.awt.event.ActionListener() {
@@ -65,15 +81,17 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        menuMenu.setText("File");
-
-        sesionMenuItem.setText("Sesión..");
-        menuMenu.add(sesionMenuItem);
+        menuMenu.setText("Opciones");
 
         personajesTableMenuItem.setText("Tabla de Personajes..");
         menuMenu.add(personajesTableMenuItem);
 
         salirMenuItem.setText("Salir");
+        salirMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirMenuItemActionPerformed(evt);
+            }
+        });
         menuMenu.add(salirMenuItem);
 
         menuBar.add(menuMenu);
@@ -84,78 +102,105 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
+                        .addContainerGap()
+                        .addComponent(imageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(registerButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(loginButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(guestButton, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(245, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(35, Short.MAX_VALUE)
                 .addComponent(imageLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(loginButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registerButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(guestButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void guestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guestButtonActionPerformed
-
+        pantallaLogueada();
     }//GEN-LAST:event_guestButtonActionPerformed
 
-    public void setPersonajesTableMenuItemActionListener(ActionListener al){
+    private void salirMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirMenuItemActionPerformed
+
+    }//GEN-LAST:event_salirMenuItemActionPerformed
+
+    public void setPersonajesTableMenuItemActionListener(ActionListener al) {
         personajesTableMenuItem.addActionListener(al);
     }
 
-    public void setSesionMenuItemActionListener(ActionListener al){
-        sesionMenuItem.addActionListener(al);
-    }
-    
-    
-    public void setSalirMenuItemActionListener(ActionListener al){
+    public void setExitActionListener(ActionListener al) {
         salirMenuItem.addActionListener(al);
     }
-    
+
+    public void setSalirMenuItemActionListener(ActionListener al) {
+        salirMenuItem.addActionListener(al);
+    }
+
     public void addLoginButtonActionListener(ActionListener al) {
         this.loginButton.addActionListener(al);
     }
-    
+
     public void addRegisterButtonActionListener(ActionListener al) {
         this.registerButton.addActionListener(al);
     }
-    
+
     public void updateForLogin() {
         loginButton.setVisible(false);
         registerButton.setVisible(false);
         guestButton.setVisible(false);
         menuBar.setVisible(true);
     }
-    
-    public void enableDisableBotonesLogin(boolean enableDisable){
+
+    public void enableDisableBotonesLogin(boolean enableDisable) {
         loginButton.setVisible(enableDisable);
         registerButton.setVisible(enableDisable);
         guestButton.setVisible(enableDisable);
         menuBar.setVisible(true);
     }
-    
-    public void invitadoActionListener(ActionListener al){
+
+    public void invitadoActionListener(ActionListener al) {
         this.guestButton.addActionListener(al);
     }
-    
+
+    public void cambiarFondo(String rutaImagen) {
+        ImageIcon icon = new ImageIcon(rutaImagen);
+        fondoLabel.setIcon(icon);
+        repaint();
+    }
+
+    public void pantallaLogueada() {
+        updateForLogin();
+        cambiarFondo("src/resources/arion.jpg");
+        fondoLabel.setBorder(BorderFactory.createEmptyBorder(0, -250, 0, 0));
+
+        ImageIcon iconOriginal = (ImageIcon) imageLabel.getIcon();
+        Image image = iconOriginal.getImage().getScaledInstance(300, 200, Image.SCALE_SMOOTH);
+        imageLabel.setIcon(new ImageIcon(image));
+
+        getContentPane().setLayout(null);
+        imageLabel.setBounds(30, 90, 380, 200);
+    }
+
+    public void setUsuarioLogueado(String nombreUsuario) {
+        userLabel.setText(nombreUsuario.toUpperCase());
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton guestButton;
     private javax.swing.JLabel imageLabel;
@@ -165,6 +210,5 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem personajesTableMenuItem;
     private javax.swing.JButton registerButton;
     private javax.swing.JMenuItem salirMenuItem;
-    private javax.swing.JMenuItem sesionMenuItem;
     // End of variables declaration//GEN-END:variables
 }
