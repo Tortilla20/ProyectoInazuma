@@ -168,3 +168,9 @@ Para registrarse, basta con darle al botón de **Registrarse** y cubrir los camp
 <p align="center">
   <img src="mediaReadme/man2.png" alt="Alt">
 </p>
+
+Si por algún motivo, se intenta registrar con uno o los dos campos vacíos, el programa mostrará un error en la que indicará que el usuario tiene que rellenar todos los campos
+
+<p align="center">
+  <img src="mediaReadme/man3.png" alt="Alt">
+</p>
