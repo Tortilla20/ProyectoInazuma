@@ -225,3 +225,10 @@ Para modificar, abajo se muestra un video de como se elimina una supertecnica de
 <p align="center">
   <img src="mediaReadme/man12.gif">
 </p>
+
+Y por último, está añadir personaje, en el que si se pulsa en el botón **Añadir** se abrirá una pertaña, en la que, habrá que realizar una serie de campos para poder añadir un personaje, una vez añadido, saldrá actualizado en la lista de personajes
+
+<p align="center">
+  <img src="mediaReadme/man13.png" width="45%" style="margin-right:10px;">
+  <img src="mediaReadme/man14.png" width="45%">
+</p>
