@@ -188,5 +188,5 @@ Para iniciar sesión, habría que cubrir los campos de **Nombre** y de **Contras
 
 En el siguiente video se muestra como se intena iniciar sesión con el usuario **Christian**, que fue anteriormente registrado, pero como se pone mal la contraseña no le deja iniciar, luego al poner la credencial bien, ya nos dejaria acceder para ver los personajes
 <p align="center">
-  <video src="mediaReadme/man6.mp4" controls width="600"></video>
+  <img src="mediaReadme/login.gif">
 </p>
