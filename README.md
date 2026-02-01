@@ -6,7 +6,7 @@
 ## Índice
 (INTRODUCIR ÍNDICE AL TERMINAR README)
 
-## Introducción
+## ⚡Introducción⚡
 Este es un programa / app que gestiona con consultas los algunos de los personajes
 de la serie Inazuma Eleven mediante una base de datos en MySQL.
 
@@ -20,7 +20,7 @@ de consultar la información proporcionada por el programa en la base de datos
 
 ---
 
-## Manual técnico para desarrolladores
+## ⚡Manual técnico para desarrolladores⚡
 
 ## Requisitos
 - **Java SE 17 o superior**: El proyecto se desarrollo usando Java 17, por lo cuál, se necesita
@@ -35,7 +35,7 @@ anteriormente mencionado [(descargar)](https://netbeans.apache.org/front/main/in
 
 ---
 
-## Modelo Entidad-Relación
+## ⚡Modelo Entidad-Relación⚡
 <p align="center">
   <img src="mediaReadme/Diagrama.png" alt="Alt">
 </p>
@@ -63,7 +63,7 @@ Tanto los **Personajes** como las **Supertécnicas** se relacionan con Atributos
 
 ---
 
-## Tablas
+##⚡Tablas⚡
 
 ### ENTIDADES
 Usuario: `3`
@@ -129,7 +129,7 @@ TIENE: `2`
 
 ---
 
-## Estructura
+## ⚡Estructura⚡
 
 Este proyecto se realizó siguiendo el patrón **MVC** (Modelo-Vista-Contolador) visto en clase:
 <p align="center">
@@ -144,7 +144,7 @@ Este proyecto se realizó siguiendo el patrón **MVC** (Modelo-Vista-Contolador)
 
 ---
 
-## Ejecución del proyecto
+## ⚡Ejecución del ⚡
 Desde su IDE favorito tendrá que:
 1. Descargar el proyecto desde el github
 2. Asegurarse que tiene todos lo requisitos necesarios que se mencionaron anteriormente
@@ -152,7 +152,7 @@ Desde su IDE favorito tendrá que:
 
 ---
 
-## Manual de Usuario
+## ⚡Manual de Usuario ⚡
 
 Cuando inicia la aplicación lo primero que se ve, como bien muestra la imagen, es una ventana en la que puedes:
 - **Iniciar Sesión**
@@ -199,7 +199,7 @@ Una vez ya estemos logueados, lo botones de **Iniciar Sesión**, **Resgistrarse*
 
 Como bien se menciono antes, hay dos formas de ver los personajes, accediendo como **Invitado**, en la que puedes ver todos los personajes del programa o **Iniciando Sesión**, en la que pudes ver **TUS** personajes y no los de los demás. A continuación se mostrarán imágenes de las dos formas:
 
-## Accediendo como Invitado:
+## ⚡ Accediendo como Invitado: ⚡
 
 Cuando pinchas en ver los personajes se te muestra ka siguiente ventana, que son los personaje que trae implementado la aplicación
 <p align="center">
@@ -254,7 +254,7 @@ Aparte del filtrado por **Nombre**, tanbién se puede filtrar por, **Género**, 
 
 >Cabe destacar que todas las opciones mencionadas para el usuario Invitado también están disponibles para el usuario Normal/Registrado. Por este motivo, no se repetirán algunas en la siguiente explicación, ya que realizan exactamente la misma función.
 
-## Accediendo como Usuario Registrado:
+## ⚡Accediendo como Usuario Registrado: ⚡
 
 Ahora se verá como se muestran los personajes de un usuario normal. La primera vez que te registras, como bien se muestra en la imagen, no tendrás ningún personaje en la tabla, ya que tienes que crearlo para que se pueda mostrar
 <p align="center">
@@ -285,7 +285,7 @@ Para contrastrar la información que se inserto antes, solo habrá que pulsar el
 
 ---
 
-## Extras
+## ⚡Extras ⚡
 
 1 - Cifrado de contraseña de usuarios de la base de datos
 
@@ -297,7 +297,7 @@ Para contrastrar la información que se inserto antes, solo habrá que pulsar el
 
 ---
 
-## Reparto de tareas
+## ⚡Reparto de tareas ⚡
 **Christian** - Conexión de base de datos, sentencias sql, diagrama en draw.io, modelo de datos en Java, diseño de las funciones CRUD, monitorización del correcto desarrollo de la aplicación
 
 **Adán** - Creación de las interfaces, creación de los controladores, investigacion y adquisicion de las librerias requeridas, incorporación de las funciones CRUD previamente diseñadas
