@@ -174,3 +174,8 @@ Si por algún motivo, se intenta registrar con uno o los dos campos vacíos, el 
 <p align="center">
   <img src="mediaReadme/man3.png" alt="Alt">
 </p>
+
+Si todo va bien, y se cubrieron todos los campos, el programa lanzará otra mensaje diciendo que el regitro fue exitoso
+<p align="center">
+  <img src="mediaReadme/man4.png" alt="Alt">
+</p>
