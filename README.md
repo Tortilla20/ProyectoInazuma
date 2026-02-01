@@ -2,7 +2,7 @@
 <p align="center">Christian Castro Iglesias</p>
 <p align="center">Adán Otero López</p>
 <p align="center">Iván Duro Fernández</p>
----
+
 ## Índice
 (INTRODUCIR ÍNDICE AL TERMINAR README)
 
