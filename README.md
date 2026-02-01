@@ -44,7 +44,7 @@ Los **Personajes** se relacionan con Equipos de varias formas:
 - Un **personaje** juega en uno o varios equipos y un equipo puede tener uno o varios personajes (relación N:M Juega).
 - Un **personaje** puede capitanear uno o varios equipos, y cada equipo tiene un único capitán (relación 1:N Capitanea).
 - Un **personaje** puede entrenar uno o varios equipos, y cada equipo tiene un único entrenador (relación 1:N Entrena).
-- 
+
 Un **Equipo** se define por un ID, nombre, región y escudo.
 
 Los **Personajes** pueden tener Supertécnicas:
