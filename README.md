@@ -122,3 +122,9 @@ TIENE: `2`
 | --- | --- | --- | --- | --- |
 | `ID_PERSONAJE` | INT | NO | SÍ | PERSONAJE(ID) |
 | `ID_SUPERTECNICA` | INT | NO | SÍ | SUPERTECNICA(ID) |
+
+---
+
+## Estructura
+
+Este proyecto se realizó siguiendo el patrón MVC (Modelo-Vista-Contolador) visto en clase:
