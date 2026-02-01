@@ -282,3 +282,7 @@ Para contrastrar la información que se inserto antes, solo habrá que pulsar el
 <p align="center">
   <img src="mediaReadme/man24.png" alt="Alt">
 </p>
+
+---
+
+prueba
